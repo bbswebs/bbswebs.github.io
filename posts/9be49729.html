@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>cisco9800无线控制器配置 | Obash</title><meta name="author" content="OBASH"><meta name="copyright" content="OBASH"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="基础配置123456789101112131415161718192021设备类型: 思科9800无线控制器 v17.x+&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;可以正常访问web界面，但是无法登录，提示登录失败ip http serverip http authentication localip http secure-serverip http secure-trustpoint CI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cisco9800无线控制器配置">
+<meta property="og:url" content="https://www.obash.cc/posts/9be49729.html">
+<meta property="og:site_name" content="Obash">
+<meta property="og:description" content="基础配置123456789101112131415161718192021设备类型: 思科9800无线控制器 v17.x+&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;可以正常访问web界面，但是无法登录，提示登录失败ip http serverip http authentication localip http secure-serverip http secure-trustpoint CI">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.ksdn.org/i/2024/08/23/66c85a831baf1.jpg">
+<meta property="article:published_time" content="2024-08-25T15:15:13.000Z">
+<meta property="article:modified_time" content="2024-08-25T15:23:40.085Z">
+<meta property="article:author" content="OBASH">
+<meta property="article:tag" content="cisco">
+<meta property="article:tag" content="思科">
+<meta property="article:tag" content="无线">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.ksdn.org/i/2024/08/23/66c85a831baf1.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://www.obash.cc/posts/9be49729.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'cisco9800无线控制器配置',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-08-25 23:23:40'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">39</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img.ksdn.org/i/2024/08/23/66c85a831baf1.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Obash"><span class="site-name">Obash</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">cisco9800无线控制器配置</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-25T15:15:13.000Z" title="发表于 2024-08-25 23:15:13">2024-08-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-25T15:23:40.085Z" title="更新于 2024-08-25 23:23:40">2024-08-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/">网络技术</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="cisco9800无线控制器配置"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">设备类型: 思科9800无线控制器 v17.x+</span><br><span class="line">=======================</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">可以正常访问web界面，但是无法登录，提示登录失败</span><br><span class="line">ip http server</span><br><span class="line">ip http authentication local</span><br><span class="line">ip http secure-server</span><br><span class="line">ip http secure-trustpoint CISCO_IDEVID_SUDI \\重点</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">无线部署流程</span><br><span class="line">========================</span><br><span class="line">定义内网vlan-定义AP管理接口或vlan-定义wlan-定义policy-定义tags-将wlan和policy绑定在tags-将tags绑定在AP</span><br><span class="line"></span><br><span class="line">AP绑定tags时，AP会掉线历时大概30s</span><br><span class="line"></span><br><span class="line">HA - SSO 手动主备切换</span><br><span class="line">========================</span><br><span class="line">    在活动 WLC 上发出冗余强制切换命令。此命令将触发手动切换，活动 WLC 将重新启动，备用 WLC 将接管网络。在这种情况下，活动 WLC 上的客户端将被取消身份验证并重新加入新的活动 WLC。</span><br><span class="line">    redundancy force-switchover</span><br></pre></td></tr></table></figure>
+
+<h2 id="客户端上线日志"><a href="#客户端上线日志" class="headerlink" title="客户端上线日志"></a>客户端上线日志</h2><p><a target="_blank" rel="noopener" href="https://img.ksdn.org/i/2024/08/25/66cb4ac16df74.png"></a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">客户端连接成功</span><br><span class="line">[client-orch-sm] [21109]：（注）：MAC：f0c1.f10b.8ac1 Association received。BSSID 7069.5a51.4ec0，旧 BSSID 0000.0000.0000，WLAN RomanTest，插槽0 AP 7069.5a51.4ec0，AP4C77.6D9E.6162</span><br><span class="line">[client-orch-state] [21109]：（注）：MAC：f0c1.f10b.8ac1 客户端状态转换：S_CO_INIT -&gt; S_CO_ASSOCIATING[dot11] [21109]: (note): MAC: f0c1.f10b.8ac1关联成功。AID 1，漫游 = 假，WGB = 假，11r = 假，11w = 假 AID 列表：0x1|0x0| 0x0| 0x0</span><br><span class="line">[client-orch-state] [21109]：（注）：MAC：f0c1.f10b.8ac1 客户端状态转换：S_CO_ASSOCIATING -&gt; S_CO_L2_AUTH_IN_PROGRESS</span><br><span class="line">[client-auth] [21109]: (note): MAC: f0c1.f10b.8ac1 ADD MOBILE 已发送。客户端状态标志：0x71 BSSID：MAC：7069.5a51.4ec0 capwap IFID：0x90000004</span><br><span class="line">[client-auth] [21109]：（注）：MAC：f0c1.f10b.8ac1 L2 身份验证已启动。方法 DOT1X，策略 VLAN 1477，AAA 覆盖 = 0，NAC = 0</span><br><span class="line">[ewlc-infra-evq] [21109]：（注）：身份验证成功。已解决策略位图：客户端 f0c1.f10b.8ac1 的 11[client-auth] [21109]: (note): MAC: f0c1.f10b.8ac1 L2 Authentication Key Exchange Start。已解析 VLAN：1477，审核会话 ID：1E27300A0000000E127592C3</span><br><span class="line">[client-keymgmt] [21109]: (注): MAC: f0c1.f10b.8ac1 EAP 密钥管理成功。AKM:DOT1X 密码:CCMP WPA2[client-orch-sm] [21109]：（注）：MAC：f0c1.f10b.8ac1 移动发现已触发。客户端模式：本地</span><br><span class="line">[client-orch-state] [21109]：（注）：MAC：f0c1.f10b.8ac1 客户端状态转换：S_CO_L2_AUTH_IN_PROGRESS -&gt;S_CO_MOBILITY_DISCOVERY_IN_PROGRESS</span><br><span class="line">[mm-client] [21109]：（注）：MAC：f0c1.f10b.8ac1 移动成功。漫游类型无，子漫游类型 MM_SUB_ROAM_TYPE_NONE，以前的 BSSID MAC：0000.0000.0000 客户端 IFID：0xa0000001，客户端角色：本地 PoA：0x90000004 PoP：0x0</span><br><span class="line">[client-auth] [21109]: (note): MAC: f0c1.f10b.8ac1 ADD MOBILE 已发送。客户端状态标志：0x72 BSSID：MAC：7069.5a51.4ec0 capwap IFID：0x90000004</span><br><span class="line">[client-orch-state] [21109]：（注）：MAC：f0c1.f10b.8ac1 客户端状态转换：S_CO_MOBILITY_DISCOVERY_IN_PROGRESS -&gt;S_CO_DPATH_PLUMB_IN_PROGRESS[dot11] [21109]: (note): MAC: f0c1.f10b.8ac1 Client datapath entry params - ssid:RomanTest,slot_id:0 bssid ifid: 0x0, radio_ifid: 0x90000003,wlan_ifid: 0xf0400002</span><br><span class="line">[dpath_svc] [21109]：（注）：MAC：f0c1.f10b.8ac1 为 ifid 0xa0000001 创建的客户端数据路径条目</span><br><span class="line">[client-orch-state] [21109]: (note): MAC: f0c1.f10b.8ac1 Client state transition: S_CO_DPATH_PLUMB_IN_PROGRESS -&gt; S_CO_IP_LEARN_IN_PROGRESS[client-iplearn] [21109]: (note): MAC: f0c1.f10b.8ac1客户端IP学习成功。方法：DHCP IP：192.168.77.200[client-orch-state] [21109]：（注）：MAC：f0c1.f10b.8ac1 客户端状态转换：S_CO_IP_LEARN_IN_PROGRESS -&gt; S_CO_RUN</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://www.obash.cc">OBASH</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://www.obash.cc/posts/9be49729.html">https://www.obash.cc/posts/9be49729.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.obash.cc" target="_blank">Obash</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/cisco/">cisco</a><a class="post-meta__tags" href="/tags/%E6%80%9D%E7%A7%91/">思科</a><a class="post-meta__tags" href="/tags/%E6%97%A0%E7%BA%BF/">无线</a></div><div class="post_share"><div class="social-share" data-image="https://img.ksdn.org/i/2024/08/23/66c85a831baf1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/4aaecdb.html" title="华为无线WLAN配置"><img class="cover" src="https://img.ksdn.org/i/2024/08/25/66cb4735ece56.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">华为无线WLAN配置</div></div></a></div><div class="next-post pull-right"><a href="/posts/838d1c89.html" title="锐捷交换机端口聚合"><img class="cover" src="https://img.ksdn.org/i/2024/08/25/66cb49ae10de4.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">锐捷交换机端口聚合</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/a8d6f45c.html" title="Cisco交换机流量镜像"><img class="cover" src="https://img.ksdn.org/i/2024/08/25/66cb4910b76ff.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-25</div><div class="title">Cisco交换机流量镜像</div></div></a></div><div><a href="/posts/924a3526.html" title="cisco-AIR-AP1852I-H-K9掉线"><img class="cover" src="https://img.ksdn.org/i/2024/08/23/66c8661dd28be.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-25</div><div class="title">cisco-AIR-AP1852I-H-K9掉线</div></div></a></div><div><a href="/posts/1c6475db.html" title="cisco route多出口冗余"><img class="cover" src="https://img.ksdn.org/i/2024/08/23/66c85a831baf1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-23</div><div class="title">cisco route多出口冗余</div></div></a></div><div><a href="/posts/540b0a09.html" title="上传镜像文件到思科设备"><img class="cover" src="https://img.ksdn.org/i/2024/08/25/66cb4910b76ff.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-25</div><div class="title">上传镜像文件到思科设备</div></div></a></div><div><a href="/posts/193ea2e.html" title="ASA上网配置"><img class="cover" src="https://img.ksdn.org/i/2024/08/23/66c8661dd28be.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-23</div><div class="title">ASA上网配置</div></div></a></div><div><a href="/posts/a6d38682.html" title="Firepower 2100升级"><img class="cover" src="https://img.ksdn.org/i/2024/08/25/66cb38cb0006f.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-25</div><div class="title">Firepower 2100升级</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">OBASH</div><div class="author-info__description">记录工作日志</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">39</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">基础配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8A%E7%BA%BF%E6%97%A5%E5%BF%97"><span class="toc-number">2.</span> <span class="toc-text">客户端上线日志</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/a9fedf39.html" title="Linux-bond配置"><img src="https://img.ksdn.org/i/2024/08/25/66cb4f838c6c5.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux-bond配置"/></a><div class="content"><a class="title" href="/posts/a9fedf39.html" title="Linux-bond配置">Linux-bond配置</a><time datetime="2024-08-25T15:49:50.000Z" title="发表于 2024-08-25 23:49:50">2024-08-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/924a3526.html" title="cisco-AIR-AP1852I-H-K9掉线"><img src="https://img.ksdn.org/i/2024/08/23/66c8661dd28be.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cisco-AIR-AP1852I-H-K9掉线"/></a><div class="content"><a class="title" href="/posts/924a3526.html" title="cisco-AIR-AP1852I-H-K9掉线">cisco-AIR-AP1852I-H-K9掉线</a><time datetime="2024-08-25T15:46:56.000Z" title="发表于 2024-08-25 23:46:56">2024-08-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/540b0a09.html" title="上传镜像文件到思科设备"><img src="https://img.ksdn.org/i/2024/08/25/66cb4910b76ff.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="上传镜像文件到思科设备"/></a><div class="content"><a class="title" href="/posts/540b0a09.html" title="上传镜像文件到思科设备">上传镜像文件到思科设备</a><time datetime="2024-08-25T15:45:00.000Z" title="发表于 2024-08-25 23:45:00">2024-08-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/9557093.html" title="天融信防火墙 vpn抓包"><img src="https://img.ksdn.org/i/2024/08/25/66cb5129cc9be.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="天融信防火墙 vpn抓包"/></a><div class="content"><a class="title" href="/posts/9557093.html" title="天融信防火墙 vpn抓包">天融信防火墙 vpn抓包</a><time datetime="2024-08-25T15:41:11.000Z" title="发表于 2024-08-25 23:41:11">2024-08-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1fe7781e.html" title="H3C AP胖转瘦方法"><img src="https://img.ksdn.org/i/2024/08/25/66cb504913fae.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="H3C AP胖转瘦方法"/></a><div class="content"><a class="title" href="/posts/1fe7781e.html" title="H3C AP胖转瘦方法">H3C AP胖转瘦方法</a><time datetime="2024-08-25T15:38:21.000Z" title="发表于 2024-08-25 23:38:21">2024-08-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By OBASH</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
