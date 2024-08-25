@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>butterfly分栏tab</title>
+      <link href="/posts/45599b87.html"/>
+      <url>/posts/45599b87.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="butterfly分栏tab"><a href="#butterfly分栏tab" class="headerlink" title="butterfly分栏tab"></a>butterfly分栏tab</h2><div class="tabs" id=""><ul class="nav-tabs"><button type="button" class="tab  active" data-href="-1">标签语法</button><button type="button" class="tab " data-href="-2">配置说明</button></ul><div class="tab-contents"><div class="tab-item-content active" id="-1"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;% tabs Unique name, [index] %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab [Tab caption] [@icon] --&gt;</span><br><span class="line">Any content (support inline tags too).</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab [Tab caption] [@icon] --&gt;</span><br><span class="line">Any content (support inline tags too).</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-item-content" id="-2"><ol><li>Unique name :</li></ol><ul><li>选项卡块标签的唯一名称，不带逗号。</li><li>将在#id中用作每个标签及其索引号的前缀。</li><li>如果名称中包含空格，则对于生成#id，所有空格将由破折号代替。</li><li>仅当前帖子&#x2F;页面的URL必须是唯一的！</li></ul><ol start="2"><li>[index]:</li></ol><ul><li>活动选项卡的索引号。</li><li>如果未指定，将选择第一个标签（1）。</li><li>如果index为-1，则不会选择任何选项卡。</li><li>可选参数。</li></ul><ol start="3"><li>[Tab caption]:</li></ol><ul><li>当前选项卡的标题。</li><li>如果未指定标题，则带有制表符索引后缀的唯一名称将用作制表符的标题。</li><li>如果未指定标题，但指定了图标，则标题将为空。</li><li>可选参数。</li></ul><ol start="4"><li>[@icon]:</li></ol><ul><li>FontAwesome图标名称（全名，看起来像“ fas fa-font”）</li><li>可以指定带空格或不带空格；</li><li>例如’Tab caption @icon’ 和 ‘Tab caption@icon’.</li><li>可选参数。</li></ul></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客主题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> butterfly </tag>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux-bond配置</title>
       <link href="/posts/a9fedf39.html"/>
       <url>/posts/a9fedf39.html</url>
@@ -675,11 +702,11 @@
       
         <tags>
             
-            <tag> cisco </tag>
-            
             <tag> Firepower </tag>
             
             <tag> ASA </tag>
+            
+            <tag> cisco </tag>
             
         </tags>
       
