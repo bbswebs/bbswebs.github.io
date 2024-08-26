@@ -51,8 +51,6 @@
             
             <tag> boud </tag>
             
-            <tag> linux </tag>
-            
         </tags>
       
     </entry>
@@ -192,10 +190,6 @@
             
             <tag> centos </tag>
             
-            <tag> linux </tag>
-            
-            <tag> radius manager </tag>
-            
             <tag> radius </tag>
             
         </tags>
@@ -223,8 +217,6 @@
             
             <tag> centos </tag>
             
-            <tag> linux </tag>
-            
             <tag> postfix </tag>
             
         </tags>
@@ -251,8 +243,6 @@
         <tags>
             
             <tag> centos </tag>
-            
-            <tag> linux </tag>
             
         </tags>
       
@@ -571,9 +561,9 @@
       
         <tags>
             
-            <tag> 抓包 </tag>
-            
             <tag> checkpoint </tag>
+            
+            <tag> 抓包 </tag>
             
         </tags>
       
@@ -624,8 +614,6 @@
         <tags>
             
             <tag> 抓包 </tag>
-            
-            <tag> linux </tag>
             
             <tag> tcpdump </tag>
             
@@ -920,8 +908,6 @@
       
         <tags>
             
-            <tag> linux </tag>
-            
             <tag> Debian </tag>
             
         </tags>
@@ -947,11 +933,38 @@
       
         <tags>
             
+            <tag> 抓包 </tag>
+            
             <tag> FortiGate </tag>
             
             <tag> 飞塔防火墙 </tag>
             
-            <tag> 抓包 </tag>
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>iperf3使用教程</title>
+      <link href="/posts/b70beb6b.html"/>
+      <url>/posts/b70beb6b.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="iperf下载"><a href="#iperf下载" class="headerlink" title="iperf下载"></a>iperf下载</h2><p><a href="https://iperf.fr/">iperf官网</a><br>点击 Download iPerf binaries ，根据自己的电脑系统安装相应的版本</p><blockquote><p>iperf3 仅支持命令行模式，无gui界面</p></blockquote><h2 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h2><ul><li>windows: cmd切换到iperf安装目录， .&#x2F;iperf3.exe [option]</li><li>mac os : 直接运行命令 iperf [option]</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">iperf -s //以服务器模式运行</span><br><span class="line">iperf -c //以客户端模式运行</span><br><span class="line"></span><br><span class="line">iperf -c dst-ip //dst-ip 是指服务器地址</span><br><span class="line"></span><br><span class="line">-i : 指定回显间隔,单位是s; 默认为1s</span><br><span class="line">-d : 指定传输带宽,单位支持m g(M G)</span><br><span class="line">-n : 指定传输文件大小,单位支持 m g(M G)</span><br><span class="line">-u : 测试udp传输带宽</span><br><span class="line">-R : 反向传输，可以理解为服务器和客户端互换角色</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="测试示例"><a href="#测试示例" class="headerlink" title="测试示例"></a>测试示例</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">服务端ip : 192.168.1.100</span><br><span class="line">客户端ip : 192.168.1.99</span><br><span class="line"></span><br><span class="line">服务端: iperf3 -s</span><br><span class="line"></span><br><span class="line">客户端: iperf3 -c 192.168.1.100 -b 100m -n 1G -i 3</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> iperf3 </tag>
+            
+            <tag> 网络测速 </tag>
             
         </tags>
       
@@ -981,33 +994,6 @@
             <tag> Mib Browser </tag>
             
             <tag> snmpwalk </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>iperf3使用教程</title>
-      <link href="/posts/b70beb6b.html"/>
-      <url>/posts/b70beb6b.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="iperf下载"><a href="#iperf下载" class="headerlink" title="iperf下载"></a>iperf下载</h2><p><a href="https://iperf.fr/">iperf官网</a><br>点击 Download iPerf binaries ，根据自己的电脑系统安装相应的版本</p><blockquote><p>iperf3 仅支持命令行模式，无gui界面</p></blockquote><h2 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h2><ul><li>windows: cmd切换到iperf安装目录， .&#x2F;iperf3.exe [option]</li><li>mac os : 直接运行命令 iperf [option]</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">iperf -s //以服务器模式运行</span><br><span class="line">iperf -c //以客户端模式运行</span><br><span class="line"></span><br><span class="line">iperf -c dst-ip //dst-ip 是指服务器地址</span><br><span class="line"></span><br><span class="line">-i : 指定回显间隔,单位是s; 默认为1s</span><br><span class="line">-d : 指定传输带宽,单位支持m g(M G)</span><br><span class="line">-n : 指定传输文件大小,单位支持 m g(M G)</span><br><span class="line">-u : 测试udp传输带宽</span><br><span class="line">-R : 反向传输，可以理解为服务器和客户端互换角色</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="测试示例"><a href="#测试示例" class="headerlink" title="测试示例"></a>测试示例</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">服务端ip : 192.168.1.100</span><br><span class="line">客户端ip : 192.168.1.99</span><br><span class="line"></span><br><span class="line">服务端: iperf3 -s</span><br><span class="line"></span><br><span class="line">客户端: iperf3 -c 192.168.1.100 -b 100m -n 1G -i 3</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> 网络技术 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> iperf3 </tag>
-            
-            <tag> 网络测速 </tag>
             
         </tags>
       
