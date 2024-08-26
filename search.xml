@@ -4,6 +4,168 @@
   
     
     <entry>
+      <title>juniper srx debug配置</title>
+      <link href="/posts/f3dea7f0.html"/>
+      <url>/posts/f3dea7f0.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="juniper-debug排错"><a href="#juniper-debug排错" class="headerlink" title="juniper debug排错"></a>juniper debug排错</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1. Enter Config Mode //进入配置模式</span><br><span class="line">netquirker@fw1&gt; configure</span><br><span class="line">&#123;primary:node0&#125;[edit]</span><br><span class="line">netquirker@fw1#</span><br><span class="line"></span><br><span class="line">2. Set Parameters //设置debug参数</span><br><span class="line">set security flow traceoptions file MY_DEBUG</span><br><span class="line">set security flow traceoptions flag basic-datapath</span><br><span class="line">set security flow traceoptions packet-filter MATCH_TRAFFIC source-prefix 1.1.1.1/32</span><br><span class="line">commit</span><br><span class="line"></span><br><span class="line">3. Activate the Debug Process //激活debug进程</span><br><span class="line">activate security flow traceoptions</span><br><span class="line"></span><br><span class="line">4. Verify that it’s working //验证debug工作状态</span><br><span class="line">show security flow traceoptions</span><br><span class="line"></span><br><span class="line">5. Exit config mode</span><br><span class="line">exit</span><br><span class="line"></span><br><span class="line">6. Perform debugging //执行调试</span><br><span class="line">Initiate relevant traffic flows</span><br><span class="line"></span><br><span class="line">7. Show the log file to view debug output //查看debug日志文件</span><br><span class="line">show log MY_DEBUG</span><br><span class="line"></span><br><span class="line">#关闭debug</span><br><span class="line">8. Re-enter config mode</span><br><span class="line">netquirker@fw1&gt; configure</span><br><span class="line">&#123;primary:node0&#125;[edit]</span><br><span class="line">netquirker@fw1#</span><br><span class="line"></span><br><span class="line">9. Deactivate the logging</span><br><span class="line">deactivate security flow traceoptions</span><br><span class="line"></span><br><span class="line">10. Remove previously added parameters</span><br><span class="line">delete security flow traceoptions file MY_DEBUG</span><br><span class="line">delete security flow traceoptions flag basic-datapath</span><br><span class="line">delete security flow traceoptions packet-filter MATCH_TRAFFIC source-prefix 1.1.1.1/32</span><br><span class="line">commit</span><br><span class="line">exit</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Miscellaneous</span><br><span class="line">Showing log files and delete them and deleting files</span><br><span class="line">file list /cf/var/log</span><br><span class="line">file delete /cf/var/log/MY_DEBUG</span><br><span class="line">file delete /cf/var/log/DMY_DEBUG.0.gz</span><br><span class="line">Example output when disabling debug</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">netquirker@fw1# show security flow traceoptions</span><br><span class="line">flag basic-datapath;</span><br><span class="line">packet-filter MATCH_TRAFFIC &#123;</span><br><span class="line"> source-prefix 1.1.1.1/32;</span><br><span class="line">&#125;</span><br><span class="line">&#123;primary:node0&#125;[edit]</span><br><span class="line">netquirker@fw1# deactivate security flow traceoptions</span><br><span class="line">&#123;primary:node0&#125;[edit]</span><br><span class="line">netquirker@fw1# show security flow traceoptions</span><br><span class="line">##</span><br><span class="line">## inactive: security flow traceoptions</span><br><span class="line">##</span><br><span class="line">flag basic-datapath;</span><br><span class="line">packet-filter MATCH_TRAFFIC &#123;</span><br><span class="line"> source-prefix 1.1.1.1/32;</span><br><span class="line">&#125;</span><br><span class="line">&#123;primary:node0&#125;[edit]</span><br><span class="line"></span><br><span class="line">netquirker@fw1#</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> juniper </tag>
+            
+            <tag> SRX </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>华三交换机密码策略</title>
+      <link href="/posts/b103060c.html"/>
+      <url>/posts/b103060c.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="Password-Control配置命令"><a href="#Password-Control配置命令" class="headerlink" title="Password Control配置命令"></a>Password Control配置命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">display password-control命令用来显示密码管理的配置信息。</span><br><span class="line"></span><br><span class="line">#【举例】</span><br><span class="line"># 显示全局密码管理信息。</span><br><span class="line"></span><br><span class="line">&lt;Sysname&gt; display password-control</span><br><span class="line"></span><br><span class="line">Global password control configurations:</span><br><span class="line"></span><br><span class="line"> Password control:                    Disabled</span><br><span class="line"></span><br><span class="line"> Password aging:                      Enabled (90 days)</span><br><span class="line"></span><br><span class="line"> Password length:                     Enabled (10 characters)</span><br><span class="line"></span><br><span class="line"> Password composition:                Enabled (1 types,  1 characters per type)</span><br><span class="line"></span><br><span class="line"> Password history:                    Enabled (max history records:4)</span><br><span class="line"></span><br><span class="line"> Early notice on password expiration: 7 days</span><br><span class="line"></span><br><span class="line"> User authentication timeout:         60 seconds</span><br><span class="line"></span><br><span class="line"> Maximum failed login attempts:       3 times</span><br><span class="line"></span><br><span class="line"> Login attempt-failed action:         Lock for 1 minutes</span><br><span class="line"></span><br><span class="line"> Minimum password update time:        24 hours</span><br><span class="line"></span><br><span class="line"> User account idle-time:              90 days</span><br><span class="line"></span><br><span class="line"> Login with aged password:            3 times in 30 days</span><br><span class="line"></span><br><span class="line"> Password complexity:                 Disabled (username checking)</span><br><span class="line"></span><br><span class="line">                                      Disabled (repeated characters checking)</span><br><span class="line"></span><br><span class="line"># 显示super密码管理信息。</span><br><span class="line"></span><br><span class="line">&lt;Sysname&gt; display password-control super</span><br><span class="line"></span><br><span class="line"> Super password control configurations:</span><br><span class="line"></span><br><span class="line"> Password aging:                      Enabled (90 days)</span><br><span class="line"></span><br><span class="line"> Password length:                     Enabled (10 characters)</span><br><span class="line"></span><br><span class="line"> Password composition:                Enabled (1 types,  1 characters per type)</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="字段解释"><a href="#字段解释" class="headerlink" title="字段解释"></a>字段解释</h2><table><thead><tr><th align="left">字段</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left">Password control</td><td align="left">全局密码管理功能的开启状态</td></tr><tr><td align="left">Password aging</td><td align="left">密码老化功能的开启状态（密码的老化时间）</td></tr><tr><td align="left">Password length</td><td align="left">密码最小长度功能的开启状态（密码的最小长度）</td></tr><tr><td align="left">Password composition</td><td align="left">密码组合策略的开启状态（密码元素的组合类型、至少要包含每种元素的个数）</td></tr><tr><td align="left">Password history</td><td align="left">密码历史记录功能的开启状态（密码历史记录的最大条数）</td></tr><tr><td align="left">Early notice on password expiration</td><td align="left">密码过期前的提醒时间</td></tr><tr><td align="left">User authentication timeout</td><td align="left">认证超时时长</td></tr><tr><td align="left">Maximum failed login attempts</td><td align="left">用户最大登录尝试次数</td></tr><tr><td align="left">Login attempt-failed action</td><td align="left">登录尝试次数达到设定次数后的用户帐户锁定方式</td></tr><tr><td align="left">Minimum password update time</td><td align="left">密码更新的最小时间间隔</td></tr><tr><td align="left">User account idle-time</td><td align="left">用户帐号闲置时间</td></tr><tr><td align="left">Login with aged password</td><td align="left">密码过期后允许用户登录的次数和时间</td></tr><tr><td align="left">Password complexity</td><td align="left">密码复杂度检查功能，可检查内容包括：是否包含用户名或者颠倒的用户名；是否包含三个或以上相同字符</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 华三 </tag>
+            
+            <tag> 交换机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>cisco自动备份</title>
+      <link href="/posts/4399954.html"/>
+      <url>/posts/4399954.html</url>
+      
+        <content type="html"><![CDATA[<p>如果您想要在Cisco设备上执行计划命令,如果您使用 的 IOS 是12.3(1)以后的新版本那么”kron”无疑是您理想的选择。</p><p>举个简单的例子，如果想要在每个星期日天晚上11点钟保存一份running config 到您的tftp(10.1.1.1)服务器那么就可以这么做：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Router(config)# kron policy-list Backup</span><br><span class="line">Router(config-kron-policy)# show run | redirect tftp://10.1.1.1/test.cfg</span><br><span class="line">Router(config-kron-policy)# exit</span><br><span class="line">Router(config)# kron occurrence Backup at 23:00 Sun recurring</span><br><span class="line">Router(config-kron-occurrence)# policy-list Backup</span><br><span class="line"></span><br><span class="line">或者 Router(config-kron-policy)# cli show run | redirect tftp://10.1.1.1/test.cfg</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>要注意的是，交互式命令不可以用在kron中，比方说 copy running-config start-config就不可以使用。原因是你在使用这条命令的时候，系统会要求你输入确认信息。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> cisco </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>华为交换机绑定ip mac</title>
+      <link href="/posts/43633065.html"/>
+      <url>/posts/43633065.html</url>
+      
+        <content type="html"><![CDATA[<p>dhcp配置中</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">static-bind ip-address 192.179.1.1 mac-address 3429-ff40-173e</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 交换机 </tag>
+            
+            <tag> huawei </tag>
+            
+            <tag> 华为 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>华为交换机无法ssh</title>
+      <link href="/posts/980daa4a.html"/>
+      <url>/posts/980daa4a.html</url>
+      
+        <content type="html"><![CDATA[<p>华为S5731 xshell连接提示,找不到匹配的host key 算法<br><a href="https://img.ksdn.org/i/2024/08/26/66cc1f215e5c8.png"></a><br>解决办法：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">undo ssh server publickey</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> huawei </tag>
+            
+            <tag> 华为 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>飞塔防火墙重置密码</title>
+      <link href="/posts/27402f24.html"/>
+      <url>/posts/27402f24.html</url>
+      
+        <content type="html"><![CDATA[<p>密码重置步骤：</p><ol><li>连上串口并配置好；</li><li>给设备加电启动；</li><li>启动完30秒内从串口登陆系统，用户名为：maintainer；</li><li>密码： bcpb＋序列号（区分大小写）；</li><li>在命令行下执行如下系列命令重新配置“admin”的密码</li><li>可以用新密码从Web界面登陆系统了<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">config system admin</span><br><span class="line">edit admin</span><br><span class="line">set password “需要配置的新密码“</span><br><span class="line">end</span><br><span class="line"></span><br></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 防火墙 </tag>
+            
+            <tag> Fortigate </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>srx开启lldp</title>
       <link href="/posts/775ab8a7.html"/>
       <url>/posts/775ab8a7.html</url>
@@ -273,9 +435,9 @@
             
             <tag> 防火墙 </tag>
             
-            <tag> vpn </tag>
-            
             <tag> ipsec </tag>
+            
+            <tag> vpn </tag>
             
             <tag> 天融信 </tag>
             
@@ -586,9 +748,9 @@
       
         <tags>
             
-            <tag> huawei </tag>
-            
             <tag> 交换机 </tag>
+            
+            <tag> huawei </tag>
             
             <tag> 华为 </tag>
             
@@ -617,9 +779,9 @@
             
             <tag> ssh </tag>
             
-            <tag> huawei </tag>
-            
             <tag> 交换机 </tag>
+            
+            <tag> huawei </tag>
             
             <tag> 华为 </tag>
             
@@ -648,9 +810,9 @@
             
             <tag> ssh </tag>
             
-            <tag> huawei </tag>
-            
             <tag> 交换机 </tag>
+            
+            <tag> huawei </tag>
             
         </tags>
       
@@ -675,9 +837,9 @@
       
         <tags>
             
-            <tag> huawei </tag>
-            
             <tag> 交换机 </tag>
+            
+            <tag> huawei </tag>
             
             <tag> 华为 </tag>
             
