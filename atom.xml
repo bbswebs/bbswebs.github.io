@@ -48,7 +48,7 @@
     <link href="https://www.obash.cc/posts/a9fedf39.html"/>
     <id>https://www.obash.cc/posts/a9fedf39.html</id>
     <published>2024-08-25T15:49:50.000Z</published>
-    <updated>2024-08-25T16:47:07.211Z</updated>
+    <updated>2024-08-26T02:03:51.792Z</updated>
     
     
       
@@ -68,7 +68,7 @@
     
     <category term="boud" scheme="https://www.obash.cc/tags/boud/"/>
     
-    <category term="Linux" scheme="https://www.obash.cc/tags/Linux/"/>
+    <category term="linux" scheme="https://www.obash.cc/tags/linux/"/>
     
   </entry>
   
@@ -192,7 +192,7 @@
     <link href="https://www.obash.cc/posts/50f78af.html"/>
     <id>https://www.obash.cc/posts/50f78af.html</id>
     <published>2024-08-25T15:34:06.000Z</published>
-    <updated>2024-08-25T16:42:27.660Z</updated>
+    <updated>2024-08-26T02:04:03.466Z</updated>
     
     
       
@@ -210,7 +210,7 @@
     
     <category term="centos" scheme="https://www.obash.cc/tags/centos/"/>
     
-    <category term="Linux" scheme="https://www.obash.cc/tags/Linux/"/>
+    <category term="linux" scheme="https://www.obash.cc/tags/linux/"/>
     
     <category term="radius manager" scheme="https://www.obash.cc/tags/radius-manager/"/>
     
@@ -223,7 +223,7 @@
     <link href="https://www.obash.cc/posts/46f48532.html"/>
     <id>https://www.obash.cc/posts/46f48532.html</id>
     <published>2024-08-25T15:31:45.000Z</published>
-    <updated>2024-08-25T16:42:21.616Z</updated>
+    <updated>2024-08-26T02:03:49.634Z</updated>
     
     
       
@@ -242,7 +242,7 @@
     
     <category term="centos" scheme="https://www.obash.cc/tags/centos/"/>
     
-    <category term="Linux" scheme="https://www.obash.cc/tags/Linux/"/>
+    <category term="linux" scheme="https://www.obash.cc/tags/linux/"/>
     
     <category term="postfix" scheme="https://www.obash.cc/tags/postfix/"/>
     
@@ -253,7 +253,7 @@
     <link href="https://www.obash.cc/posts/4c082866.html"/>
     <id>https://www.obash.cc/posts/4c082866.html</id>
     <published>2024-08-25T15:26:41.000Z</published>
-    <updated>2024-08-25T16:41:45.065Z</updated>
+    <updated>2024-08-26T02:03:58.367Z</updated>
     
     
       
@@ -272,7 +272,7 @@
     
     <category term="centos" scheme="https://www.obash.cc/tags/centos/"/>
     
-    <category term="Linux" scheme="https://www.obash.cc/tags/Linux/"/>
+    <category term="linux" scheme="https://www.obash.cc/tags/linux/"/>
     
   </entry>
   
@@ -598,9 +598,9 @@
     <category term="网络技术" scheme="https://www.obash.cc/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="checkpoint" scheme="https://www.obash.cc/tags/checkpoint/"/>
-    
     <category term="抓包" scheme="https://www.obash.cc/tags/%E6%8A%93%E5%8C%85/"/>
+    
+    <category term="checkpoint" scheme="https://www.obash.cc/tags/checkpoint/"/>
     
   </entry>
   

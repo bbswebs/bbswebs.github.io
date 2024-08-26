@@ -51,7 +51,7 @@
             
             <tag> boud </tag>
             
-            <tag> Linux </tag>
+            <tag> linux </tag>
             
         </tags>
       
@@ -192,7 +192,7 @@
             
             <tag> centos </tag>
             
-            <tag> Linux </tag>
+            <tag> linux </tag>
             
             <tag> radius manager </tag>
             
@@ -223,7 +223,7 @@
             
             <tag> centos </tag>
             
-            <tag> Linux </tag>
+            <tag> linux </tag>
             
             <tag> postfix </tag>
             
@@ -252,7 +252,7 @@
             
             <tag> centos </tag>
             
-            <tag> Linux </tag>
+            <tag> linux </tag>
             
         </tags>
       
@@ -571,9 +571,9 @@
       
         <tags>
             
-            <tag> checkpoint </tag>
-            
             <tag> 抓包 </tag>
+            
+            <tag> checkpoint </tag>
             
         </tags>
       
@@ -625,7 +625,7 @@
             
             <tag> 抓包 </tag>
             
-            <tag> Linux </tag>
+            <tag> linux </tag>
             
             <tag> tcpdump </tag>
             
@@ -920,7 +920,7 @@
       
         <tags>
             
-            <tag> Linux </tag>
+            <tag> linux </tag>
             
             <tag> Debian </tag>
             
@@ -947,11 +947,11 @@
       
         <tags>
             
-            <tag> 抓包 </tag>
-            
             <tag> FortiGate </tag>
             
             <tag> 飞塔防火墙 </tag>
+            
+            <tag> 抓包 </tag>
             
         </tags>
       
