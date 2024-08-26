@@ -4,6 +4,149 @@
   
     
     <entry>
+      <title>srx开启lldp</title>
+      <link href="/posts/775ab8a7.html"/>
+      <url>/posts/775ab8a7.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="开启juniper防火墙邻居发现协议"><a href="#开启juniper防火墙邻居发现协议" class="headerlink" title="开启juniper防火墙邻居发现协议"></a>开启juniper防火墙邻居发现协议</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">开启juniper防火墙邻居发现协议</span><br><span class="line">edit protocols lldp</span><br><span class="line">  set interface all  //在所有端口开启lldp</span><br><span class="line">或者</span><br><span class="line">set interface g0/0/0.1 //在g0/0/0.1接口上开启lldp</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="关闭juniper防火墙邻居发现协议"><a href="#关闭juniper防火墙邻居发现协议" class="headerlink" title="关闭juniper防火墙邻居发现协议"></a>关闭juniper防火墙邻居发现协议</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">edit protocols lldp</span><br><span class="line">  set interface all disable</span><br><span class="line"></span><br><span class="line">edit protocols lldp</span><br><span class="line">  set interface interface-name disable</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 防火墙 </tag>
+            
+            <tag> juniper </tag>
+            
+            <tag> SRX </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>nmcli命令详解</title>
+      <link href="/posts/32254948.html"/>
+      <url>/posts/32254948.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="nmcli-device介绍"><a href="#nmcli-device介绍" class="headerlink" title="nmcli device介绍"></a>nmcli device介绍</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">`nmcli device`是NetworkManager命令行工具（nmcli）中的子命令，用于管理网络设备。NetworkManager是一个在许多Linux发行版中用于管理网络连接的守护程序。</span><br><span class="line"></span><br><span class="line">`nmcli device`命令提供了有关网络设备的信息和操作。它可以用来列出系统中的网络设备、显示设备的状态、启用/禁用设备、配置设备的连接等。</span><br><span class="line"></span><br><span class="line">以下是一些常用的`nmcli device`子命令和用法：</span><br><span class="line"></span><br><span class="line">- `nmcli device show`：显示所有网络设备的详细信息，包括设备名称、类型、MAC地址、IP地址、连接状态等。</span><br><span class="line">- `nmcli device status`：显示网络设备的简要状态信息，包括设备名称、设备类型、设备状态（已连接、已禁用等）。</span><br><span class="line">- `nmcli device connect &lt;设备名称&gt;`：连接指定的网络设备。</span><br><span class="line">- `nmcli device disconnect &lt;设备名称&gt;`：断开指定的网络设备的连接。</span><br><span class="line">- `nmcli device wifi list`：列出可用的无线网络。</span><br><span class="line">- `nmcli device wifi connect `：连接到指定的无线网络。</span><br><span class="line">- `nmcli device wifi connect  password &lt;密码&gt;`：连接到需要密码的无线网络，并提供密码。</span><br><span class="line">- `nmcli device wifi rescan`：重新扫描可用的无线网络。</span><br><span class="line"></span><br><span class="line">这些命令可以通过在终端中输入`nmcli device help`来获取更多的帮助和详细的命令用法。</span><br></pre></td></tr></table></figure><h2 id="nmcli-connectione-介绍"><a href="#nmcli-connectione-介绍" class="headerlink" title="nmcli connectione 介绍"></a>nmcli connectione 介绍</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">`nmcli conn`是NetworkManager命令行工具（nmcli）中的子命令，用于管理网络连接。NetworkManager是一个在许多Linux发行版中用于管理网络连接的守护程序。</span><br><span class="line"></span><br><span class="line">`nmcli conn`命令用于创建、修改、删除和管理网络连接。它允许您列出系统中的所有连接、显示连接的详细信息、激活/禁用连接、添加/删除连接等。</span><br><span class="line"></span><br><span class="line">以下是一些常用的`nmcli conn`子命令和用法：</span><br><span class="line"></span><br><span class="line">- `nmcli conn show`：显示所有网络连接的详细信息，包括连接名称、连接类型、设备、IP配置等。</span><br><span class="line">- `nmcli conn up &lt;连接名称&gt;`：激活指定的网络连接。</span><br><span class="line">- `nmcli conn down &lt;连接名称&gt;`：禁用指定的网络连接。</span><br><span class="line">- `nmcli conn add &lt;连接类型&gt; &lt;连接配置&gt;`：添加一个新的网络连接。</span><br><span class="line">- `nmcli conn modify &lt;连接名称&gt; &lt;连接配置&gt;`：修改现有的网络连接。</span><br><span class="line">- `nmcli conn delete &lt;连接名称&gt;`：删除指定的网络连接。</span><br><span class="line"></span><br><span class="line">这些命令可以通过在终端中输入`nmcli conn help`来获取更多的帮助和详细的命令用法。</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="网络管理"><a href="#网络管理" class="headerlink" title="网络管理"></a>网络管理</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">`nmcli` 命令默认使用 NetworkManager 来管理网络连接</span><br><span class="line">同时使用传统接口配置文件和 NetworkManager 来管理网络连接可能会导致冲突。</span><br><span class="line"></span><br><span class="line">传统接口配置文件（例如 `/etc/network/interfaces`）是用于手动配置网络接口的文件。当您使用传统接口配置文件时，NetworkManager 将不会管理相应的网络连接。这意味着，如果您在传统接口配置文件中手动配置了网络接口，NetworkManager 将不会对该接口进行任何管理操作，包括自动连接、DHCP、DNS 等。</span><br><span class="line"></span><br><span class="line">如果您同时使用传统接口配置文件和 NetworkManager，可能会发生以下情况之一：</span><br><span class="line"></span><br><span class="line">1. NetworkManager 忽略传统接口配置文件中的配置：NetworkManager 将不会加载或应用传统接口配置文件中的任何配置。这意味着您在传统接口配置文件中设置的固定IP等配置将不会生效。</span><br><span class="line"></span><br><span class="line">2. NetworkManager 与传统接口配置文件中的配置发生冲突：如果传统接口配置文件中的配置与 NetworkManager 的配置冲突，可能会导致网络连接出现问题。例如，如果传统接口配置文件中设置了固定IP，而 NetworkManager 同时尝试使用 DHCP 分配IP地址，可能会导致冲突和连接问题。</span><br><span class="line"></span><br><span class="line">为避免冲突，建议您在使用 NetworkManager 的情况下避免同时使用传统接口配置文件。如果您希望使用 NetworkManager 来管理网络连接，请使用 NetworkManager 提供的工具（如 nmcli）来配置和管理连接。如果您希望手动配置网络接口，请使用传统接口配置文件并禁用 NetworkManager。</span><br><span class="line"></span><br><span class="line">NetworkManager网络配置文件路径：</span><br><span class="line">NetworkManager 会将连接配置信息存储在 `/etc/NetworkManager/system-connections/` 目录中的单独文件中。每个连接都有一个对应的文件，其中包含了该连接的详细配置信息。</span><br></pre></td></tr></table></figure><h2 id="device-和connection区别"><a href="#device-和connection区别" class="headerlink" title="device 和connection区别"></a>device 和connection区别</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">`nmcli conn up eth0`和`nmcli device conn eth0`是两个不同的命令，具有不同的功能和用途。</span><br><span class="line"></span><br><span class="line">1. `nmcli conn up eth0`：这个命令用于启用（连接）指定的网络连接。`eth0`是网络连接的名称或UUID。它会尝试连接该网络连接并激活相关的网络设备。</span><br><span class="line"></span><br><span class="line">2. `nmcli device conn eth0`：这个命令用于将指定的网络设备与一个网络连接关联起来。`eth0`是网络设备的名称或UUID。它不会直接连接或启用网络连接，而是将网络设备与网络连接关联起来，以便在需要时进行连接。</span><br><span class="line"></span><br><span class="line">总结来说，`nmcli conn up eth0`用于连接网络，而`nmcli device conn eth0`用于将网络设备与网络连接关联起来。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">`nmcli device`命令用于管理网络设备，它主要涉及到网卡硬件的配置和操作。通过`nmcli device`命令，您可以列出系统中的网络设备、显示设备的状态、启用/禁用设备、配置设备的连接等。</span><br><span class="line"></span><br><span class="line">`nmcli conn`命令则是用于管理网络连接的命令。它涉及到的是网络连接的配置和操作，包括创建、删除、修改和连接网络连接。</span><br><span class="line"></span><br><span class="line">总结：</span><br><span class="line">- `nmcli device`命令用于管理网络设备，涉及到网卡硬件的配置和操作。</span><br><span class="line">- `nmcli conn`命令用于管理网络连接，涉及到网络连接的配置和操作。</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="更改connection-中name的名称"><a href="#更改connection-中name的名称" class="headerlink" title="更改connection 中name的名称"></a>更改connection 中name的名称</h2><h3 id="查看方式"><a href="#查看方式" class="headerlink" title="查看方式"></a>查看方式</h3><p>其实要修改的是 网络连接 的显示名称<br>有些情况下使用nmcli conn show 看到的是以下情况<br><a href="https://img.ksdn.org/i/2024/08/26/66cc16d223e84.png"></a></p><h3 id="修改命令"><a href="#修改命令" class="headerlink" title="修改命令"></a>修改命令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">要修改连接的名称（con-name），您可以使用`nmcli con modify`命令。以下是修改连接名称的示例命令：</span><br><span class="line"></span><br><span class="line">nmcli con modify old-name con-name new-name</span><br><span class="line"></span><br><span class="line">在上面的命令中，将&quot;old-name&quot;替换为要修改的连接的当前名称，将&quot;new-name&quot;替换为您想要修改为的新名称。</span><br><span class="line"></span><br><span class="line">例如，如果要将连接名为&quot;Wired connectione 1&quot;的连接修改为&quot;eth1&quot;，则可以使用以下命令：</span><br><span class="line"></span><br><span class="line">nmcli conn mod Wired\ connection\ 1 con-name eth1 </span><br><span class="line"></span><br><span class="line">请注意，修改连接名称可能需要管理员权限。如果命令执行成功，连接的名称将被修改为新的名称。</span><br><span class="line">修改完成后如下图</span><br></pre></td></tr></table></figure><p><a href="https://img.ksdn.org/i/2024/08/26/66cc176289685.png"></a></p><h2 id="con-name-和-ifname区别"><a href="#con-name-和-ifname区别" class="headerlink" title="con-name 和 ifname区别"></a>con-name 和 ifname区别</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">ifname(interface-name)表示是硬件设备的名称即 device, 这个名称和ifconfig看到的网卡名称应该是一致的</span><br><span class="line">con-name 表示的是 网络连接 的名称</span><br><span class="line">nmcli conn show中显示的 NAME=con-name DEVICE=ifname</span><br><span class="line"></span><br><span class="line">以下显示结果表示：</span><br><span class="line">名为eth0的一个网络连接绑定在了硬件名为eth0的上面</span><br><span class="line">NAME                UUID                                  TYPE      DEVICE </span><br><span class="line">eth0                690f2e83-809d-47b8-ac1e-d675deb1ca3b  ethernet  eth0 </span><br><span class="line"></span><br><span class="line">===========================</span><br><span class="line">GPT的解释：</span><br><span class="line">在命令`nmcli conn add con-name eth0 ifname eth0 type ethernet`中，`con-name eth0`和`ifname eth0`分别表示以下内容：</span><br><span class="line"></span><br><span class="line">- `con-name eth0`：`con-name`是`nmcli conn add`命令的选项，用于指定要创建的连接的名称。在这里，`eth0`是连接的名称，您可以根据需要自定义连接的名称。连接名称用来标识和识别不同的网络连接。</span><br><span class="line"></span><br><span class="line">- `ifname eth0`：`ifname`是`nmcli conn add`命令的选项，用于指定连接要绑定的网络设备的名称。在这里，`eth0`是要绑定的网络设备的名称。`eth0`通常是用于表示第一个以太网接口的名称，您可以根据实际情况更改网络设备的名称。</span><br><span class="line"></span><br><span class="line">综上所述，命令`nmcli conn add con-name eth0 ifname eth0 type ethernet`的作用是创建一个名为`eth0`的连接，并将其绑定到名为`eth0`的网络设备上。这将创建一个以太网类型的连接，并使用指定的名称将其关联到指定的网络设备。</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="查看连接绑定了哪个网卡"><a href="#查看连接绑定了哪个网卡" class="headerlink" title="查看连接绑定了哪个网卡"></a>查看连接绑定了哪个网卡</h2><p><a href="https://img.ksdn.org/i/2024/08/26/66cc17a395b12.png"></a><br><a href="https://img.ksdn.org/i/2024/08/26/66cc17cf94a7a.png"></a></p><h2 id="添加一个新的连接"><a href="#添加一个新的连接" class="headerlink" title="添加一个新的连接"></a>添加一个新的连接</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">新增一个名为zx-eth1的连接，并绑定在名为eth1的网卡上，类型为ethernet</span><br><span class="line">nmcli conn add con-name zx-eth1 ifname eth1 type ethernet </span><br><span class="line"></span><br><span class="line">给zx-eth1的连接配置一个固定IP，并配置dns</span><br><span class="line">1. 配置固定IP地址：</span><br><span class="line"></span><br><span class="line">nmcli con modify zx-eth1 ipv4.method manual ipv4.addresses 192.168.1.100/24 ipv4.gateway 192.168.1.1</span><br><span class="line"></span><br><span class="line">2. 配置DNS服务器：</span><br><span class="line">nmcli con modify zx-eth1 ipv4.dns 8.8.8.8</span><br><span class="line"></span><br><span class="line">3. 应用更改：</span><br><span class="line">nmcli con up zx-eth1   //这将使更改生效。</span><br><span class="line"></span><br><span class="line">请注意，执行上述命令可能需要管理员权限。确保替换命令中的连接名称和IP地址为您实际使用的值。</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="ipv4-method字段解释"><a href="#ipv4-method字段解释" class="headerlink" title="ipv4.method字段解释"></a>ipv4.method字段解释</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">在 NetworkManager 的连接配置文件中，`ipv4.method` 字段用于指定 IPv4 地址的获取方式。它可以有以下几个取值：</span><br><span class="line"></span><br><span class="line">1. `auto`：表示自动获取 IPv4 地址。这意味着 NetworkManager 将使用 DHCP 协议自动获取 IP 地址、子网掩码、网关和 DNS 服务器等网络配置信息。</span><br><span class="line"></span><br><span class="line">2. `manual`：表示手动配置 IPv4 地址。这意味着您需要在连接配置中指定固定的 IP 地址、子网掩码、网关和 DNS 服务器等网络配置信息。</span><br><span class="line"></span><br><span class="line">3. `link-local`：表示使用 IPv4 连接本地地址。这是一种特殊的自动配置方式，只适用于本地网络通信，不需要 DHCP 服务器。</span><br><span class="line"></span><br><span class="line">4. `disabled`：表示禁用 IPv4。这意味着 NetworkManager 将不会为该连接配置 IPv4 地址。</span><br><span class="line"></span><br><span class="line">默认情况下，`ipv4.method` 字段通常设置为 `auto`，以便使用 DHCP 自动获取 IPv4 地址。根据您的网络环境和需求，您可以根据需要修改该字段的值来选择不同的 IPv4 地址获取方式。</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> nmcli </tag>
+            
+            <tag> debian </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>华为交换机多对多端口镜像</title>
+      <link href="/posts/3c44c801.html"/>
+      <url>/posts/3c44c801.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="华为交换机多对多端口镜像"><a href="#华为交换机多对多端口镜像" class="headerlink" title="华为交换机多对多端口镜像"></a>华为交换机多对多端口镜像</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">华为交换机CE12808S</span><br><span class="line"></span><br><span class="line">新建端口聚合</span><br><span class="line">Int eth-trunk 120</span><br><span class="line"></span><br><span class="line">将物理端口加入聚合组</span><br><span class="line">Int 10ge7/0/1</span><br><span class="line">        Eth-trunk 120</span><br><span class="line">Int 10ge8/0/1</span><br><span class="line">        Eth-trunk 120</span><br><span class="line"></span><br><span class="line">观察端口配置  </span><br><span class="line">Observ-port 8 interface eth-trunk 120</span><br><span class="line">镜像端口配置</span><br><span class="line">Int eth-trunk 49 </span><br><span class="line">   Port-mirrorint observ-port 8 both </span><br><span class="line"></span><br><span class="line">ps: </span><br><span class="line">both表示出入向流量</span><br><span class="line">观察端口是聚合端口eth-trunk120;包含两个物理端口，工作模式是负载均衡</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> huawei </tag>
+            
+            <tag> 华为 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ASA远程管理</title>
+      <link href="/posts/838722ba.html"/>
+      <url>/posts/838722ba.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="TELNET的配置"><a href="#TELNET的配置" class="headerlink" title="TELNET的配置"></a>TELNET的配置</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ASA-802(config)# telnet 192.168.100.101 255.255.255.255 inside   //设置允许从inside接口telnet到ASA防火墙</span><br><span class="line">ASA-802(config)# telnet timeout 3   //设置TELNET的超时间为3分钟。</span><br><span class="line">ASA-802(config)#</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="SSH的配置"><a href="#SSH的配置" class="headerlink" title="SSH的配置"></a>SSH的配置</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">ASA-802(config)# domain xfzhou.com    //给ASA配置一个域名，SSH生成KEY的时候要用到</span><br><span class="line">ASA-802(config)# hostname ASA   //配置主机名，SSH生成KEY的时候要用到</span><br><span class="line"></span><br><span class="line">ASA(config)# crypto key generate rsa       //生成一个KEY</span><br><span class="line">WARNING: You have a RSA keypair already defined named &lt;Default-RSA-Key&gt;.</span><br><span class="line"></span><br><span class="line">Do you really want to replace them? [yes/no]: yes  //这是因为我前面已经生成了一个KEY</span><br><span class="line">Keypair generation process begin. Please wait...</span><br><span class="line">ASA(config)# ssh 192.168.100.101 255.255.255.255 inside  //这里我是测试下，所以就直接使用inside接口了。生产中一般是outside接口。即：#ssh 0 0 outside</span><br><span class="line">ASA(config)# ssh version 2     //这个是SSH的版本，要看你的ASA支持的加密算法我公司的就不支持3DES,所以用不了版本2，只能用版本1</span><br><span class="line">ASA(config)# ssh timeout 5    //设置SSH 超时时间</span><br><span class="line">ASA(config)#</span><br><span class="line"></span><br><span class="line">再来说下如何设置密码：</span><br><span class="line">ASA(config)# passwd telnetpwd    //telnet进入到ASA时，进入用户模式的密码,但是，如果telnet也启用了本地用户认证的话，这个密码就没有用了。</span><br><span class="line">ASA(config)# enable password enpwd      //这个密码是从用户模式到特权模式对TELNET和SSH都有用。</span><br><span class="line">ASA(config)#</span><br><span class="line">ASA(config)# username admin password admin123  //添加一个本地用户admin，并为其设置密码。</span><br><span class="line">ASA(config)#</span><br><span class="line">ASA(config)#</span><br><span class="line">ASA(config)# aaa authentication ssh console LOCAL   //设置SSH使用本地用户认证</span><br><span class="line">ASA(config)# aaa authentication telnet console LOCAL //设置TELNET使用本地用户认证</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">还有一个命令比较怪：ASA(config)# aaa authentication enable console LOCAL  这个是说把enable密码也使用本地用户的密码，由于第一道防线就是使用用户自己的密码来验证的，如果这个enable的密码也使用这个验证的话，那就有点不安全了，所以一般不配置这行。</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> cisco </tag>
+            
+            <tag> ASA </tag>
+            
+            <tag> 防火墙 </tag>
+            
+            <tag> ssh </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>nmcli配置bond接口</title>
+      <link href="/posts/26219d4e.html"/>
+      <url>/posts/26219d4e.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="新建bond1虚拟接口"><a href="#新建bond1虚拟接口" class="headerlink" title="新建bond1虚拟接口"></a>新建bond1虚拟接口</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">con-name : 定义bond名称</span><br><span class="line">type：定义接口类型为bond</span><br><span class="line">ifname :定义接口名称</span><br><span class="line">mode：定义bond模式</span><br><span class="line">nmcli connection add con-name bond1 type bond ifname bond1 mode active-backup</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="将端口加入到bond1"><a href="#将端口加入到bond1" class="headerlink" title="将端口加入到bond1"></a>将端口加入到bond1</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nmcli connection add ifname ens224 type bond-slave master bond1</span><br><span class="line">nmcli connection add ifname ens256 type bond-slvae master bond1</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>此时，已经可以在&#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F; 下看到相关信息，加入bond组后的网卡配置文件为 bond-slvae-ens** ;我这里的配置文件名称为bond-slave-ens224 bond-slave-ens256</p><h2 id="启动bond1接口"><a href="#启动bond1接口" class="headerlink" title="启动bond1接口"></a>启动bond1接口</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nmcli connection up bond-slave-ens224</span><br><span class="line">nmcli connection up bond-slave-ens256</span><br><span class="line">nmcli connection up bond1</span><br></pre></td></tr></table></figure><div class="note red icon-padding flat"><i class="note-icon fa-solid fa-circle-exclamation"></i><p>注意</p></div><ul><li>这里你不能用nmcli conn up ens224 或者 nmcli conn up ens256来启动网卡了</li><li>需要用新生成的配置文件来启动ens224 和ens256网卡</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> nmcli </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>butterfly分栏tab</title>
       <link href="/posts/45599b87.html"/>
       <url>/posts/45599b87.html</url>
@@ -130,9 +273,9 @@
             
             <tag> 防火墙 </tag>
             
-            <tag> ipsec </tag>
-            
             <tag> vpn </tag>
+            
+            <tag> ipsec </tag>
             
             <tag> 天融信 </tag>
             
@@ -323,9 +466,9 @@
       
         <tags>
             
-            <tag> 交换机 </tag>
-            
             <tag> ssh </tag>
+            
+            <tag> 交换机 </tag>
             
             <tag> ruijie </tag>
             
@@ -354,9 +497,9 @@
       
         <tags>
             
-            <tag> 交换机 </tag>
-            
             <tag> ssh </tag>
+            
+            <tag> 交换机 </tag>
             
             <tag> ruijie </tag>
             
@@ -472,11 +615,11 @@
       
         <tags>
             
+            <tag> ssh </tag>
+            
             <tag> huawei </tag>
             
             <tag> 交换机 </tag>
-            
-            <tag> ssh </tag>
             
             <tag> 华为 </tag>
             
@@ -503,11 +646,11 @@
       
         <tags>
             
+            <tag> ssh </tag>
+            
             <tag> huawei </tag>
             
             <tag> 交换机 </tag>
-            
-            <tag> ssh </tag>
             
         </tags>
       
@@ -640,9 +783,9 @@
       
         <tags>
             
-            <tag> juniper </tag>
-            
             <tag> 防火墙 </tag>
+            
+            <tag> juniper </tag>
             
             <tag> SRX </tag>
             
@@ -669,9 +812,9 @@
       
         <tags>
             
-            <tag> juniper </tag>
-            
             <tag> 防火墙 </tag>
+            
+            <tag> juniper </tag>
             
             <tag> SRX </tag>
             
@@ -700,9 +843,9 @@
             
             <tag> cisco </tag>
             
-            <tag> Firepower </tag>
-            
             <tag> ASA </tag>
+            
+            <tag> Firepower </tag>
             
         </tags>
       

@@ -6,7 +6,7 @@
   <link href="https://www.obash.cc/atom.xml" rel="self"/>
   
   <link href="https://www.obash.cc/"/>
-  <updated>2024-08-25T16:43:32.676Z</updated>
+  <updated>2024-08-26T05:57:06.477Z</updated>
   <id>https://www.obash.cc/</id>
   
   <author>
@@ -15,6 +15,149 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>srx开启lldp</title>
+    <link href="https://www.obash.cc/posts/775ab8a7.html"/>
+    <id>https://www.obash.cc/posts/775ab8a7.html</id>
+    <published>2024-08-26T05:55:26.000Z</published>
+    <updated>2024-08-26T05:57:06.477Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;开启juniper防火墙邻居发现协议&quot;&gt;&lt;a href=&quot;#开启juniper防火墙邻居发现协议&quot; class=&quot;headerlink&quot; title=&quot;开启juniper防火墙邻居发现协议&quot;&gt;&lt;/a&gt;开启juniper防火墙邻居发现协议&lt;/h2&gt;&lt;figure</summary>
+        
+      
+    
+    
+    
+    <category term="网络技术" scheme="https://www.obash.cc/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="防火墙" scheme="https://www.obash.cc/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
+    
+    <category term="juniper" scheme="https://www.obash.cc/tags/juniper/"/>
+    
+    <category term="SRX" scheme="https://www.obash.cc/tags/SRX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nmcli命令详解</title>
+    <link href="https://www.obash.cc/posts/32254948.html"/>
+    <id>https://www.obash.cc/posts/32254948.html</id>
+    <published>2024-08-26T05:44:33.000Z</published>
+    <updated>2024-08-26T05:52:47.690Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;nmcli-device介绍&quot;&gt;&lt;a href=&quot;#nmcli-device介绍&quot; class=&quot;headerlink&quot; title=&quot;nmcli device介绍&quot;&gt;&lt;/a&gt;nmcli device介绍&lt;/h2&gt;&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="https://www.obash.cc/categories/linux/"/>
+    
+    
+    <category term="Linux" scheme="https://www.obash.cc/tags/Linux/"/>
+    
+    <category term="nmcli" scheme="https://www.obash.cc/tags/nmcli/"/>
+    
+    <category term="debian" scheme="https://www.obash.cc/tags/debian/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>华为交换机多对多端口镜像</title>
+    <link href="https://www.obash.cc/posts/3c44c801.html"/>
+    <id>https://www.obash.cc/posts/3c44c801.html</id>
+    <published>2024-08-26T05:41:42.000Z</published>
+    <updated>2024-08-26T05:52:47.689Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;华为交换机多对多端口镜像&quot;&gt;&lt;a href=&quot;#华为交换机多对多端口镜像&quot; class=&quot;headerlink&quot; title=&quot;华为交换机多对多端口镜像&quot;&gt;&lt;/a&gt;华为交换机多对多端口镜像&lt;/h2&gt;&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    <category term="网络技术" scheme="https://www.obash.cc/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="huawei" scheme="https://www.obash.cc/tags/huawei/"/>
+    
+    <category term="华为" scheme="https://www.obash.cc/tags/%E5%8D%8E%E4%B8%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ASA远程管理</title>
+    <link href="https://www.obash.cc/posts/838722ba.html"/>
+    <id>https://www.obash.cc/posts/838722ba.html</id>
+    <published>2024-08-26T05:37:51.000Z</published>
+    <updated>2024-08-26T05:52:47.687Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;TELNET的配置&quot;&gt;&lt;a href=&quot;#TELNET的配置&quot; class=&quot;headerlink&quot; title=&quot;TELNET的配置&quot;&gt;&lt;/a&gt;TELNET的配置&lt;/h2&gt;&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    <category term="网络技术" scheme="https://www.obash.cc/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="cisco" scheme="https://www.obash.cc/tags/cisco/"/>
+    
+    <category term="ASA" scheme="https://www.obash.cc/tags/ASA/"/>
+    
+    <category term="防火墙" scheme="https://www.obash.cc/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
+    
+    <category term="ssh" scheme="https://www.obash.cc/tags/ssh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nmcli配置bond接口</title>
+    <link href="https://www.obash.cc/posts/26219d4e.html"/>
+    <id>https://www.obash.cc/posts/26219d4e.html</id>
+    <published>2024-08-26T03:14:06.000Z</published>
+    <updated>2024-08-26T05:36:46.341Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;新建bond1虚拟接口&quot;&gt;&lt;a href=&quot;#新建bond1虚拟接口&quot; class=&quot;headerlink&quot; title=&quot;新建bond1虚拟接口&quot;&gt;&lt;/a&gt;新建bond1虚拟接口&lt;/h2&gt;&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="https://www.obash.cc/categories/linux/"/>
+    
+    
+    <category term="Linux" scheme="https://www.obash.cc/tags/Linux/"/>
+    
+    <category term="nmcli" scheme="https://www.obash.cc/tags/nmcli/"/>
+    
+  </entry>
   
   <entry>
     <title>butterfly分栏tab</title>
@@ -148,9 +291,9 @@
     
     <category term="防火墙" scheme="https://www.obash.cc/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
     
-    <category term="ipsec" scheme="https://www.obash.cc/tags/ipsec/"/>
-    
     <category term="vpn" scheme="https://www.obash.cc/tags/vpn/"/>
+    
+    <category term="ipsec" scheme="https://www.obash.cc/tags/ipsec/"/>
     
     <category term="天融信" scheme="https://www.obash.cc/tags/%E5%A4%A9%E8%9E%8D%E4%BF%A1/"/>
     
@@ -343,9 +486,9 @@
     <category term="网络技术" scheme="https://www.obash.cc/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="交换机" scheme="https://www.obash.cc/tags/%E4%BA%A4%E6%8D%A2%E6%9C%BA/"/>
-    
     <category term="ssh" scheme="https://www.obash.cc/tags/ssh/"/>
+    
+    <category term="交换机" scheme="https://www.obash.cc/tags/%E4%BA%A4%E6%8D%A2%E6%9C%BA/"/>
     
     <category term="ruijie" scheme="https://www.obash.cc/tags/ruijie/"/>
     
@@ -374,9 +517,9 @@
     <category term="网络技术" scheme="https://www.obash.cc/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="交换机" scheme="https://www.obash.cc/tags/%E4%BA%A4%E6%8D%A2%E6%9C%BA/"/>
-    
     <category term="ssh" scheme="https://www.obash.cc/tags/ssh/"/>
+    
+    <category term="交换机" scheme="https://www.obash.cc/tags/%E4%BA%A4%E6%8D%A2%E6%9C%BA/"/>
     
     <category term="ruijie" scheme="https://www.obash.cc/tags/ruijie/"/>
     
@@ -439,158 +582,6 @@
     <category term="流量镜像" scheme="https://www.obash.cc/tags/%E6%B5%81%E9%87%8F%E9%95%9C%E5%83%8F/"/>
     
     <category term="思科" scheme="https://www.obash.cc/tags/%E6%80%9D%E7%A7%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>华为交换机配置dot1x认证，并配置语音vlan</title>
-    <link href="https://www.obash.cc/posts/374852ca.html"/>
-    <id>https://www.obash.cc/posts/374852ca.html</id>
-    <published>2024-08-25T15:05:30.000Z</published>
-    <updated>2024-08-25T15:22:32.500Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;version&quot;&gt;&lt;a href=&quot;#version&quot; class=&quot;headerlink&quot; title=&quot;version&quot;&gt;&lt;/a&gt;version&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
-        
-      
-    
-    
-    
-    <category term="网络技术" scheme="https://www.obash.cc/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"/>
-    
-    
-    <category term="huawei" scheme="https://www.obash.cc/tags/huawei/"/>
-    
-    <category term="交换机" scheme="https://www.obash.cc/tags/%E4%BA%A4%E6%8D%A2%E6%9C%BA/"/>
-    
-    <category term="华为" scheme="https://www.obash.cc/tags/%E5%8D%8E%E4%B8%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>华为交换机端口聚合</title>
-    <link href="https://www.obash.cc/posts/94a67536.html"/>
-    <id>https://www.obash.cc/posts/94a67536.html</id>
-    <published>2024-08-25T15:03:56.000Z</published>
-    <updated>2024-08-25T15:22:32.500Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Version&quot;&gt;&lt;a href=&quot;#Version&quot; class=&quot;headerlink&quot; title=&quot;Version&quot;&gt;&lt;/a&gt;Version&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
-        
-      
-    
-    
-    
-    <category term="网络技术" scheme="https://www.obash.cc/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"/>
-    
-    
-    <category term="huawei" scheme="https://www.obash.cc/tags/huawei/"/>
-    
-    <category term="交换机" scheme="https://www.obash.cc/tags/%E4%BA%A4%E6%8D%A2%E6%9C%BA/"/>
-    
-    <category term="ssh" scheme="https://www.obash.cc/tags/ssh/"/>
-    
-    <category term="华为" scheme="https://www.obash.cc/tags/%E5%8D%8E%E4%B8%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>华为交换机SSH配置</title>
-    <link href="https://www.obash.cc/posts/c3a383cf.html"/>
-    <id>https://www.obash.cc/posts/c3a383cf.html</id>
-    <published>2024-08-25T15:02:29.000Z</published>
-    <updated>2024-08-25T15:53:50.720Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;华为交换机SSH配置&quot;&gt;&lt;a href=&quot;#华为交换机SSH配置&quot; class=&quot;headerlink&quot; title=&quot;华为交换机SSH配置&quot;&gt;&lt;/a&gt;华为交换机SSH配置&lt;/h2&gt;&lt;figure class=&quot;highlight</summary>
-        
-      
-    
-    
-    
-    <category term="网络技术" scheme="https://www.obash.cc/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"/>
-    
-    
-    <category term="huawei" scheme="https://www.obash.cc/tags/huawei/"/>
-    
-    <category term="交换机" scheme="https://www.obash.cc/tags/%E4%BA%A4%E6%8D%A2%E6%9C%BA/"/>
-    
-    <category term="ssh" scheme="https://www.obash.cc/tags/ssh/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>华为交换机双线路冗余及自动切换</title>
-    <link href="https://www.obash.cc/posts/d5e68f65.html"/>
-    <id>https://www.obash.cc/posts/d5e68f65.html</id>
-    <published>2024-08-25T14:59:22.000Z</published>
-    <updated>2024-08-25T15:22:32.498Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;环境背景：&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;核心交换机堆叠配置&lt;/li&gt;
-&lt;li&gt;客户一台防火墙双线连接核心交换机，2个3层口(防火墙不做端口聚合)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;配置详情&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="网络技术" scheme="https://www.obash.cc/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"/>
-    
-    
-    <category term="huawei" scheme="https://www.obash.cc/tags/huawei/"/>
-    
-    <category term="交换机" scheme="https://www.obash.cc/tags/%E4%BA%A4%E6%8D%A2%E6%9C%BA/"/>
-    
-    <category term="华为" scheme="https://www.obash.cc/tags/%E5%8D%8E%E4%B8%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Checkpoint相关配置</title>
-    <link href="https://www.obash.cc/posts/abffad84.html"/>
-    <id>https://www.obash.cc/posts/abffad84.html</id>
-    <published>2024-08-25T14:53:42.000Z</published>
-    <updated>2024-08-25T14:57:21.608Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;重置SIC密码&quot;&gt;&lt;a href=&quot;#重置SIC密码&quot; class=&quot;headerlink&quot; title=&quot;重置SIC密码&quot;&gt;&lt;/a&gt;重置SIC密码&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
-        
-      
-    
-    
-    
-    <category term="网络技术" scheme="https://www.obash.cc/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"/>
-    
-    
-    <category term="checkpoint" scheme="https://www.obash.cc/tags/checkpoint/"/>
-    
-    <category term="抓包" scheme="https://www.obash.cc/tags/%E6%8A%93%E5%8C%85/"/>
     
   </entry>
   
