@@ -4,6 +4,87 @@
   
     
     <entry>
+      <title>hexo+butterfly高亮文字 - 标签外挂</title>
+      <link href="/posts/2a810e3d.html"/>
+      <url>/posts/2a810e3d.html</url>
+      
+        <content type="html"><![CDATA[<div class="note red icon-padding simple"><i class="note-icon fas fa-bullhorn"></i><p>建議 不要 在段落開頭使用 label 標籤外掛</p></div><table><thead><tr><th align="center">参数</th><th align="center">解释</th></tr></thead><tbody><tr><td align="center">text</td><td align="center">高亮文字</td></tr><tr><td align="center">color</td><td align="center">背景颜色，可选 <br>default&#x2F;blue&#x2F;pink&#x2F;red&#x2F;purple&#x2F;orange&#x2F;green</td></tr></tbody></table><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line">label 表示标签类型</span><br><span class="line">&#123;% label text color %&#125;</span><br></pre></td></tr></table></figure><mark class="hl-label blue">这个是blue;www.obash.cc</mark>  <br><mark class="hl-label pink">这个是pink;www.obash.cc</mark>  <br><mark class="hl-label red">这个是red;www.obash.cc</mark>  <br><mark class="hl-label purple">这个是purple;www.obash.cc</mark>  <br><mark class="hl-label orange">这个是orange;www.obash.cc</mark>  <br><mark class="hl-label green">这个是green;www.obash.cc</mark>  <br>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客主题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> butterfly </tag>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>在vlan上应用ACL</title>
+      <link href="/posts/9478f21a.html"/>
+      <url>/posts/9478f21a.html</url>
+      
+        <content type="html"><![CDATA[<div class="note red icon-padding simple"><i class="note-icon fas fa-bullhorn"></i><p>实验基于cisco设备</p></div><ul><li>vlan10网段：10.1.1.0&#x2F;24</li><li>vlan20网段：20.1.1.0&#x2F;24</li><li>vlan30网段：30.1.1.0&#x2F;24</li><li>网关都是：x.x.x.1</li></ul><h3 id="标准ACL"><a href="#标准ACL" class="headerlink" title="标准ACL"></a>标准ACL</h3><p>ACL配置</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">标准ACL只能限制源</span><br><span class="line">Switch(config)#ip access-list standard 10 </span><br><span class="line">Switch(config-std-nacl)#10 deny host 10.1.1.8 log </span><br><span class="line"></span><br></pre></td></tr></table></figure><h4 id=""><a href="#" class="headerlink" title=""></a><mark class="hl-label green">将ACL挂在vlan10的in方向</mark> </h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Switch(config)#int vlan 10</span><br><span class="line">Switch(config-if)#ip access</span><br><span class="line">Switch(config-if)#ip access-group 10 in</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>由图可以看出，一旦将acl挂载到vlan10的in方向，数据会在被acl直接拒绝掉<br><img src="https://img.ksdn.org/i/2024/08/29/66d07b336be13.png"></p><p>效果：vlan 10 无法访问vlan20 vlan30 和any<br>总结：vlan10无法访问任何地址<br><img src="https://img.ksdn.org/i/2024/08/29/66d07bdf547bb.png"></p><hr><h4 id="-1"><a href="#-1" class="headerlink" title=""></a><mark class="hl-label green">将ACL挂在vlan10的out方向</mark> </h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Switch(config)#int vlan 10</span><br><span class="line">Switch(config-if)#ip access</span><br><span class="line">Switch(config-if)#ip access-group 10 out</span><br></pre></td></tr></table></figure><p>可以看到流量可以正常进入vlan10，但是在vlan10往外转发时，被acl拒绝<br><img src="https://img.ksdn.org/i/2024/08/29/66d07d2b3553f.png"></p><p>效果：vlan 10 无法访问vlan20 vlan30 和any<br>总结：vlan10无法访问任何地址<br><img src="https://img.ksdn.org/i/2024/08/29/66d07dffd98f8.png"></p><hr><h4 id="-2"><a href="#-2" class="headerlink" title=""></a><mark class="hl-label green">将ACL挂载到vlan20的in方向</mark> </h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Switch(config)#int vlan 20</span><br><span class="line">Switch(config-if)#ip access</span><br><span class="line">Switch(config-if)#ip access-group 20 in</span><br></pre></td></tr></table></figure><p><img src="https://img.ksdn.org/i/2024/08/29/66d098394cc9a.png"></p><ul><li>10.1.1.8 不能访问20.1.1.8</li><li>10.1.1.8 可以访问30.1.1.8</li></ul><h4 id="-3"><a href="#-3" class="headerlink" title=""></a><mark class="hl-label green">将ACL挂载到vlan20的out方向</mark> </h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Switch(config)#int vlan 20</span><br><span class="line">Switch(config-if)#ip access</span><br><span class="line">Switch(config-if)#ip access-group 20 out</span><br></pre></td></tr></table></figure><p><img src="https://img.ksdn.org/i/2024/08/29/66d098bd80dd4.png"></p><ul><li>10.1.1.8 不能访问20.1.1.8</li><li>10.1.1.8 可以访问30.1.1.8</li></ul><div class="note success modern"><p>综上：得出结论，标准ACL应尽量应用在靠近目标端的in方向</p></div><hr><h3 id="扩展ACL"><a href="#扩展ACL" class="headerlink" title="扩展ACL"></a>扩展ACL</h3><p>需求：<br>10.1.1.8 可以访问 20.1.1.8<br>10.1.1.8 不可以访问 30.1.1.8<br>10.1.1.8 可以访问其他网段</p><p>ACL配置</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Switch(config)#ip access-list extended 2010</span><br><span class="line">Switch(config-ext-nacl)#10 permit ip host 10.1.1.8 host 20.1.1.8 log</span><br><span class="line">Switch(config-ext-nacl)#20 deny ip host 10.1.1.8 host 30.1.1.8 log</span><br><span class="line">Switch(config-ext-nacl)#30 permit ip any any</span><br></pre></td></tr></table></figure><h4 id="-4"><a href="#-4" class="headerlink" title=""></a><mark class="hl-label green">将ACL挂载到vlan10的in方向</mark> </h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">interface Vlan10</span><br><span class="line"> ip address 10.1.1.1 255.255.255.0</span><br><span class="line"> ip access-group 2010 in</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>可以看到数据在vlan10方向进入，然后跟进acl放行和拒绝规则进行数据处理<br><img src="https://img.ksdn.org/i/2024/08/29/66d07b336be13.png"></p><p>效果：vlan 10 可以访问vlan20不能访问vlan30；可以访问其他网段；<mark class="hl-label red">可以实现需求</mark> <br><img src="https://img.ksdn.org/i/2024/08/29/66d0821ed7568.png"></p><hr><h4 id="-5"><a href="#-5" class="headerlink" title=""></a><mark class="hl-label green">将ACL挂载到vlan10的out方向</mark> </h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">interface Vlan10</span><br><span class="line"> ip address 10.1.1.1 255.255.255.0</span><br><span class="line"> ip access-group 2010 out</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>可以看到流量可以正常进入vlan10；但是在vlan10往外转发时，没有执行acl的动作规则<br><img src="https://img.ksdn.org/i/2024/08/29/66d08c0cda00e.png"></p><p>效果：vlan 10 可以访问vlan20不能访问vlan30；可以访问其他网段；<mark class="hl-label red">不可以实现需求</mark> <br><img src="https://img.ksdn.org/i/2024/08/29/66d08b4fc6eca.png"></p><hr><h4 id="-6"><a href="#-6" class="headerlink" title=""></a><mark class="hl-label green">将ACL挂载到vlan30的in方向</mark> </h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">interface Vlan30</span><br><span class="line"> ip address 30.1.1.1 255.255.255.0</span><br><span class="line"> ip access-group 2010 in</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>同样没有匹配acl规则, <mark class="hl-label red">不可以实现需求</mark> <br><img src="https://img.ksdn.org/i/2024/08/29/66d08b4fc6eca.png"></p><hr><h4 id="-7"><a href="#-7" class="headerlink" title=""></a><mark class="hl-label green">将ACL挂载到vlan30的out方向</mark> </h4><p>效果：只有访问30.1.1.8的匹配了，其他的未匹配<mark class="hl-label red">可以实现需求</mark> </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">interface Vlan30</span><br><span class="line"> ip address 30.1.1.1 255.255.255.0</span><br><span class="line"> ip access-group 2010 out</span><br></pre></td></tr></table></figure><div class="note success modern"><p>综上：得出结论，扩展ACL应用在源端vlan的in方向，应用在目的端vlan的out方向</p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CCIE </tag>
+            
+            <tag> ACL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ICMP类型和code值</title>
+      <link href="/posts/cd92a6a4.html"/>
+      <url>/posts/cd92a6a4.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="常见的-ICMP-类型和代码："><a href="#常见的-ICMP-类型和代码：" class="headerlink" title="常见的 ICMP 类型和代码："></a>常见的 ICMP 类型和代码：</h3><p>ICMP（Internet Control Message Protocol）的 Type 和 Code 字段组合用于表示不同类型的消息和其详细信息。</p><h4 id="ICMP-Type-0-255"><a href="#ICMP-Type-0-255" class="headerlink" title="ICMP Type 0-255"></a>ICMP Type 0-255</h4><ul><li><p>Type 0: Echo Reply（回显应答）</p><ul><li>Code 0: 标准回显应答</li></ul></li><li><p>Type 3: Destination Unreachable（目的地不可达）</p><ul><li>Code 0: Net Unreachable（网络不可达）</li><li>Code 1: Host Unreachable（主机不可达）</li><li>Code 2: Protocol Unreachable（协议不可达）</li><li>Code 3: Port Unreachable（端口不可达）</li><li>Code 4: Fragmentation Needed and DF Set（需要分片但 DF 标志设置）</li><li>Code 5: Source Route Failed（源路由失败）</li><li>Code 6: Destination Network Unknown（目标网络未知）</li><li>Code 7: Destination Host Unknown（目标主机未知）</li><li>Code 8: Source Host Isolated（源主机隔离）</li><li>Code 9: Network Administratively Prohibited（网络管理禁止）</li><li>Code 10: Host Administratively Prohibited（主机管理禁止）</li><li>Code 11: Network Unreachable for Type of Service（服务类型的网络不可达）</li><li>Code 12: Host Unreachable for Type of Service（服务类型的主机不可达）</li><li>Code 13: Communication Administratively Prohibited（通信管理禁止）</li></ul></li><li><p>Type 8: Echo Request（回显请求）</p><ul><li>Code 0: 标准回显请求</li></ul></li><li><p>Type 11: Time Exceeded（时间超限）</p><ul><li>Code 0: Time to Live (TTL) Exceeded in Transit（TTL 超过）</li><li>Code 1: Fragment Reassembly Time Exceeded（分片重组超限）</li></ul></li><li><p>Type 12: Parameter Problem（参数问题）</p><ul><li>Code 0: Pointer Indicates the Error（指针指示错误）</li><li>Code 1: Missing Required Option（缺少必需选项）</li><li>Code 2: Bad Length（长度错误）</li></ul></li><li><p>Type 5: Redirect（重定向）</p><ul><li>Code 0: Redirect Datagram for the Network（网络重定向数据报）</li><li>Code 1: Redirect Datagram for the Host（主机重定向数据报）</li><li>Code 2: Redirect Datagram for the Type of Service and Network（服务类型和网络重定向数据报）</li><li>Code 3: Redirect Datagram for the Type of Service and Host（服务类型和主机重定向数据报）<br>这些类型和代码用于 ICMP 消息的不同场景和目的，有助于网络诊断和错误报告。</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CCIE </tag>
+            
+            <tag> ICMP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>juniper srx debug配置</title>
       <link href="/posts/f3dea7f0.html"/>
       <url>/posts/f3dea7f0.html</url>
@@ -309,7 +390,7 @@
     
     
     <entry>
-      <title>butterfly分栏tab</title>
+      <title>hexo+butterfly分栏tab</title>
       <link href="/posts/45599b87.html"/>
       <url>/posts/45599b87.html</url>
       

@@ -6,7 +6,7 @@
   <link href="https://www.obash.cc/atom.xml" rel="self"/>
   
   <link href="https://www.obash.cc/"/>
-  <updated>2024-08-26T06:46:37.865Z</updated>
+  <updated>2024-08-29T14:46:07.171Z</updated>
   <id>https://www.obash.cc/</id>
   
   <author>
@@ -15,6 +15,87 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo+butterfly高亮文字 - 标签外挂</title>
+    <link href="https://www.obash.cc/posts/2a810e3d.html"/>
+    <id>https://www.obash.cc/posts/2a810e3d.html</id>
+    <published>2024-08-29T14:36:00.000Z</published>
+    <updated>2024-08-29T14:46:07.171Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;note red icon-padding simple&quot;&gt;&lt;i class=&quot;note-icon fas fa-bullhorn&quot;&gt;&lt;/i&gt;&lt;p&gt;建議 不要 在段落開頭使用 label</summary>
+        
+      
+    
+    
+    
+    <category term="博客主题" scheme="https://www.obash.cc/categories/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/"/>
+    
+    
+    <category term="butterfly" scheme="https://www.obash.cc/tags/butterfly/"/>
+    
+    <category term="hexo" scheme="https://www.obash.cc/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在vlan上应用ACL</title>
+    <link href="https://www.obash.cc/posts/9478f21a.html"/>
+    <id>https://www.obash.cc/posts/9478f21a.html</id>
+    <published>2024-08-29T13:19:33.000Z</published>
+    <updated>2024-08-29T15:53:06.640Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;note red icon-padding simple&quot;&gt;&lt;i class=&quot;note-icon fas</summary>
+        
+      
+    
+    
+    
+    <category term="网络技术" scheme="https://www.obash.cc/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="CCIE" scheme="https://www.obash.cc/tags/CCIE/"/>
+    
+    <category term="ACL" scheme="https://www.obash.cc/tags/ACL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ICMP类型和code值</title>
+    <link href="https://www.obash.cc/posts/cd92a6a4.html"/>
+    <id>https://www.obash.cc/posts/cd92a6a4.html</id>
+    <published>2024-08-29T09:48:06.000Z</published>
+    <updated>2024-08-29T09:57:48.956Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;常见的-ICMP-类型和代码：&quot;&gt;&lt;a href=&quot;#常见的-ICMP-类型和代码：&quot; class=&quot;headerlink&quot; title=&quot;常见的 ICMP 类型和代码：&quot;&gt;&lt;/a&gt;常见的 ICMP 类型和代码：&lt;/h3&gt;&lt;p&gt;ICMP（Internet</summary>
+        
+      
+    
+    
+    
+    <category term="网络技术" scheme="https://www.obash.cc/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="CCIE" scheme="https://www.obash.cc/tags/CCIE/"/>
+    
+    <category term="ICMP" scheme="https://www.obash.cc/tags/ICMP/"/>
+    
+  </entry>
   
   <entry>
     <title>juniper srx debug配置</title>
@@ -330,11 +411,11 @@
   </entry>
   
   <entry>
-    <title>butterfly分栏tab</title>
+    <title>hexo+butterfly分栏tab</title>
     <link href="https://www.obash.cc/posts/45599b87.html"/>
     <id>https://www.obash.cc/posts/45599b87.html</id>
     <published>2024-08-25T16:07:47.000Z</published>
-    <updated>2024-08-25T16:43:32.676Z</updated>
+    <updated>2024-08-29T16:01:44.190Z</updated>
     
     
       
@@ -495,87 +576,6 @@
     <category term="h3c" scheme="https://www.obash.cc/tags/h3c/"/>
     
     <category term="华三" scheme="https://www.obash.cc/tags/%E5%8D%8E%E4%B8%89/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>centos7安装RadiusManager认证系统</title>
-    <link href="https://www.obash.cc/posts/50f78af.html"/>
-    <id>https://www.obash.cc/posts/50f78af.html</id>
-    <published>2024-08-25T15:34:06.000Z</published>
-    <updated>2024-08-26T02:46:20.963Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;直接搬运，懒得翻译了&quot;&gt;&lt;a href=&quot;#直接搬运，懒得翻译了&quot; class=&quot;headerlink&quot; title=&quot;直接搬运，懒得翻译了&quot;&gt;&lt;/a&gt;直接搬运，懒得翻译了&lt;/h2&gt;&lt;figure class=&quot;highlight</summary>
-        
-      
-    
-    
-    
-    <category term="linux" scheme="https://www.obash.cc/categories/linux/"/>
-    
-    
-    <category term="centos" scheme="https://www.obash.cc/tags/centos/"/>
-    
-    <category term="radius" scheme="https://www.obash.cc/tags/radius/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>centos7使用postfix实现Gmail邮件转发</title>
-    <link href="https://www.obash.cc/posts/46f48532.html"/>
-    <id>https://www.obash.cc/posts/46f48532.html</id>
-    <published>2024-08-25T15:31:45.000Z</published>
-    <updated>2024-08-26T02:46:31.760Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Gmail开启SMTP功能&quot;&gt;&lt;a href=&quot;#Gmail开启SMTP功能&quot; class=&quot;headerlink&quot; title=&quot;Gmail开启SMTP功能&quot;&gt;&lt;/a&gt;Gmail开启SMTP功能&lt;/h2&gt;&lt;p&gt;方式自行百度，此处不展示&lt;/p&gt;
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="linux" scheme="https://www.obash.cc/categories/linux/"/>
-    
-    
-    <category term="centos" scheme="https://www.obash.cc/tags/centos/"/>
-    
-    <category term="postfix" scheme="https://www.obash.cc/tags/postfix/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>centos7安装webmin</title>
-    <link href="https://www.obash.cc/posts/4c082866.html"/>
-    <id>https://www.obash.cc/posts/4c082866.html</id>
-    <published>2024-08-25T15:26:41.000Z</published>
-    <updated>2024-08-26T02:46:26.686Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;打开您选择的编辑器并创建以下存储库文件：&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
-        
-      
-    
-    
-    
-    <category term="linux" scheme="https://www.obash.cc/categories/linux/"/>
-    
-    
-    <category term="centos" scheme="https://www.obash.cc/tags/centos/"/>
     
   </entry>
   
