@@ -488,20 +488,6 @@
 
   
   <url>
-    <loc>https://www.obash.cc/tags/checkpoint/</loc>
-    <lastmod>2024-08-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.obash.cc/tags/%E6%8A%93%E5%8C%85/</loc>
-    <lastmod>2024-08-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.obash.cc/tags/cisco/</loc>
     <lastmod>2024-08-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -524,6 +510,20 @@
   
   <url>
     <loc>https://www.obash.cc/tags/ssh/</loc>
+    <lastmod>2024-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.obash.cc/tags/checkpoint/</loc>
+    <lastmod>2024-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.obash.cc/tags/%E6%8A%93%E5%8C%85/</loc>
     <lastmod>2024-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -565,20 +565,6 @@
   </url>
   
   <url>
-    <loc>https://www.obash.cc/tags/CCIE/</loc>
-    <lastmod>2024-08-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.obash.cc/tags/ICMP/</loc>
-    <lastmod>2024-08-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.obash.cc/tags/%E6%97%A0%E7%BA%BF/</loc>
     <lastmod>2024-08-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -594,6 +580,20 @@
   
   <url>
     <loc>https://www.obash.cc/tags/%E5%8D%8E%E4%B8%89/</loc>
+    <lastmod>2024-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.obash.cc/tags/CCIE/</loc>
+    <lastmod>2024-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.obash.cc/tags/ICMP/</loc>
     <lastmod>2024-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
