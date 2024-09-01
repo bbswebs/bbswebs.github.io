@@ -1,0 +1,178 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>vxlan基础 | Obash</title><meta name="author" content="OBASH"><meta name="copyright" content="OBASH"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="VXLAN（虚拟可扩展局域网）- 该技术提供与当前 VLAN 相同的以太网第 2 层网络服务，但其可扩展性和灵活性更为出色。VNID（VXLAN 网络标识符）- 用于定义广播域的 24 位网段 ID。可与“VXLAN 网段 ID”互换。相当于传统VLAN中的VLAN IDVTEP（vxlan tunnel end-point虚拟隧道终端）- 这是执行封装和解封的设备。NVE（network vir">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vxlan基础">
+<meta property="og:url" content="https://www.obash.cc/posts/740855be.html">
+<meta property="og:site_name" content="Obash">
+<meta property="og:description" content="VXLAN（虚拟可扩展局域网）- 该技术提供与当前 VLAN 相同的以太网第 2 层网络服务，但其可扩展性和灵活性更为出色。VNID（VXLAN 网络标识符）- 用于定义广播域的 24 位网段 ID。可与“VXLAN 网段 ID”互换。相当于传统VLAN中的VLAN IDVTEP（vxlan tunnel end-point虚拟隧道终端）- 这是执行封装和解封的设备。NVE（network vir">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://imgapi.cn/bing.php">
+<meta property="article:published_time" content="2024-08-31T09:50:52.000Z">
+<meta property="article:modified_time" content="2024-09-01T14:13:46.946Z">
+<meta property="article:author" content="OBASH">
+<meta property="article:tag" content="vxlan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://imgapi.cn/bing.php"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://www.obash.cc/posts/740855be.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'vxlan基础',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-09-01 22:13:46'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Obash" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">55</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">50</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://imgapi.cn/bing.php')"><nav id="nav"><span id="blog-info"><a href="/" title="Obash"><span class="site-name">Obash</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">vxlan基础</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-31T09:50:52.000Z" title="发表于 2024-08-31 17:50:52">2024-08-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-09-01T14:13:46.946Z" title="更新于 2024-09-01 22:13:46">2024-09-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/">网络技术</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="vxlan基础"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>VXLAN（虚拟可扩展局域网）- 该技术提供与当前 VLAN 相同的以太网第 2 层网络服务，但其可扩展性和灵活性更为出色。<br>VNID（VXLAN 网络标识符）- 用于定义广播域的 24 位网段 ID。可与“VXLAN 网段 ID”互换。相当于传统VLAN中的VLAN ID<br>VTEP（vxlan tunnel end-point虚拟隧道终端）- 这是执行封装和解封的设备。<br>NVE（network virtualistation edge网络虚拟接口）- 执行封装和解封所在的逻辑接口。</p>
+<p>NVO3(Network Virtualization Over Layer 3，3层网络虚拟化)，基于三层IP overlay网络构建虚拟网络技术统称为NVO3，目前比较有代表性的有：VXLAN、NVGRE（微软私有，Over IP）、STT（VMware NSX 私有，无三次握手的TCP）。</p>
+<p>NVE（Network Virtualization Edge，网络虚拟边界设备）运行NVO3的设备，它位于overlay网络的边界，实现二、三层的虚拟化功能。主要用于本地VTEP地址管理，VXLAN隧道管理，头端复制列表管理。</p>
+<p>VTEP（VXLAN Tunnel EndPoint，VXLAN隧道端点）：VXLAN网络中的NVE以VTEP进行标识，VTEP必须全网唯一。<br>每一个NVE至少有一个VTEP，VTEP使用NVE的IP地址表示【一般用设备的Loopback接口，回环接口不会down，且更节约ip地址资源（可配置为32位）】；<br>两个VTEP可以确定一条VXLAN隧道。np：VTEP间的这条VXLAN隧道将被两个NVE间所有的VNI公用。</p>
+<p>BD（Bridge Domain，桥域）是VXLAN网络中转发数据报文的二层广播域（为支持vxlan，新增加的一个二层广播域定义）。在VXLAN网络中，将VNI（L2vni）以1:1方式映射到广播域BD，BD成为VXLAN网络转发数据报文的实体。<br>所有广播域功能基于BD支持，如MAC学习、二层查表、广播复制等；<br>BD-ID本地有效，用以连接vlan和vxlan【可通过L2子接口、或vlan方式配置关联】。</p>
+<p>vBDIF：BD域的三层路由接口，用于二层流量进入三层进行路由转发。BD通过vbdif接入租户的三层VRF虚拟路由器。不同的VRF通过L3vni来区分。</p>
+<p>L2-Subif 二层子接口：用于用户接入，子接口接入方式包括：dot1q（单vlan或vlan区间），default（不区分tag，统一封装），untag，qinq双层封装（vid pe ce-vid ce）。</p>
+<p>VXLAN隧道：用于VXLAN报文的转发，用本地VTEP地址+远端VTEP地址标识。</p>
+<p>VXLAN防环机制：使用水平分割防环。即：设备从vxlan隧道收到的数据帧，如解封装后发现是二层BUM帧，则只会在VNI关联的BD本地接口泛洪（南向BD接口），不会重新封装发送给其它的VTEP。</p>
+<p>VXLAN 的简化理解——-两次虚拟化：<br>1、第一次虚拟化：利用隧道技术将边缘设备互连透传二层报文；整网抽象理解成一台端口数目扩展的超大LAN switch。<br>2、第二次虚拟化利用VNI将这台超大的交换机虚拟出多个二层的广播域，和VLAN本质是一样的，VNI类比VLANID. 并通过定义VXLAN header中的VNI字段，将子网范围由4K扩展至16M。</p>
+<p>VSI：标识接口关联的VSI（Virtual Switching Instance）。<br>Learned-From：远端NVE地址或是本地接口。<br>evn：标识EVN或EVPN网络中存在的MAC地址表项。</p>
+<p>当目的MAC命中本地时，使用vlan封装【其实是根据出接口配置的封装方式进行封装】。<br>当目的MAC命中Vtep邻居时，使用Vxlan封装，并通过Vxlan隧道发往对应的Vtep邻居。</p>
+<p>虚机中对应的则是ARP表。</p>
+<p>更换 vPC 交换机的最佳实践<br>预检查<br>show version<br>show module<br>show spanning-tree summary<br>show vlan summary<br>show ip interface brief<br>show port-channel summary<br>show vpc<br>show vpc brief<br>show vpc role<br>show vpc peer-keepalives<br>show vpc statistics peer-keepalive<br>show vpc consistency-parameters global<br>show vpc consistency-parameters interface port-channel&lt;&gt;<br>show vpc consistency-parameters vlans<br>show run vpc all<br>show hsrp brief<br>show hsrp<br>show run hsrp<br>show hsrp interface vlan <vlan_number><br>Show vrrp<br>Show vrrp brief<br>Show vrrp interface vlan <vlan_number><br>Show run vrrp</p>
+<p>vpc 最佳实践，可选项</p>
+<ul>
+<li>auto-recovery</li>
+<li>peer-gateway //最佳实践</li>
+<li>peer-switch //最佳实践</li>
+<li>ip arp synchronize //故障设备恢复后，不立即转发，而是等到arp同步后；最佳实践</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://www.obash.cc">OBASH</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://www.obash.cc/posts/740855be.html">https://www.obash.cc/posts/740855be.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.obash.cc" target="_blank">Obash</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/vxlan/">vxlan</a></div><div class="post_share"><div class="social-share" data-image="https://imgapi.cn/bing.php" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/6b7c8f27.html" title="路由协议思维导图"><img class="cover" src="https://img.ksdn.org/i/2024/09/01/66d4331d42280.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">路由协议思维导图</div></div></a></div><div class="next-post pull-right"><a href="/posts/dca58d73.html" title="cisco思科路由器nat配置"><img class="cover" src="https://img.ksdn.org/i/2024/08/25/66cb4910b76ff.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">cisco思科路由器nat配置</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">OBASH</div><div class="author-info__description">记录工作日志</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">55</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">50</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">趁年轻赶紧折腾，再不折腾就老了！</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/a8a4a779.html" title="hexo+butterfly外挂标签 - 集合篇"><img src="https://imgapi.cn/bing.php" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hexo+butterfly外挂标签 - 集合篇"/></a><div class="content"><a class="title" href="/posts/a8a4a779.html" title="hexo+butterfly外挂标签 - 集合篇">hexo+butterfly外挂标签 - 集合篇</a><time datetime="2024-09-01T12:26:58.000Z" title="发表于 2024-09-01 20:26:58">2024-09-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/eb2973a0.html" title="hexo+butterfly思维导图"><img src="https://img.ksdn.org/i/2024/09/01/66d43271cbe99.gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hexo+butterfly思维导图"/></a><div class="content"><a class="title" href="/posts/eb2973a0.html" title="hexo+butterfly思维导图">hexo+butterfly思维导图</a><time datetime="2024-09-01T08:37:20.000Z" title="发表于 2024-09-01 16:37:20">2024-09-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/6b7c8f27.html" title="路由协议思维导图"><img src="https://img.ksdn.org/i/2024/09/01/66d4331d42280.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="路由协议思维导图"/></a><div class="content"><a class="title" href="/posts/6b7c8f27.html" title="路由协议思维导图">路由协议思维导图</a><time datetime="2024-09-01T08:09:20.000Z" title="发表于 2024-09-01 16:09:20">2024-09-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/740855be.html" title="vxlan基础"><img src="https://imgapi.cn/bing.php" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vxlan基础"/></a><div class="content"><a class="title" href="/posts/740855be.html" title="vxlan基础">vxlan基础</a><time datetime="2024-08-31T09:50:52.000Z" title="发表于 2024-08-31 17:50:52">2024-08-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/dca58d73.html" title="cisco思科路由器nat配置"><img src="https://img.ksdn.org/i/2024/08/25/66cb4910b76ff.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cisco思科路由器nat配置"/></a><div class="content"><a class="title" href="/posts/dca58d73.html" title="cisco思科路由器nat配置">cisco思科路由器nat配置</a><time datetime="2024-08-31T06:29:51.000Z" title="发表于 2024-08-31 14:29:51">2024-08-31</time></div></div></div></div></div></div></main><footer id="footer" style="background: #60A5FA"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By OBASH</div><div class="footer_custom_text"><p> <a style="margin-inline:5px"target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为 Hexo" alt="HEXO"></a> <a style="margin-inline:5px"target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用 Butterfly" alt="Butterfly"></a> <a style="margin-inline:5px"target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由 GitHub 托管" alt="GitHub"></a> <a style="margin-inline:5px"target="_blank" href="https://www.obash.cc/sitemap.xml"><img src="https://img.shields.io/badge/MAPS-SiteMap-%230ABF53?style=flat&logo=googlemaps&logoColor=%23FE5F50" title="站点地图" alt="Sitemap"></a> <a style="margin-inline:5px"target="_blank"href="https://www.obash.cc/atom.xml"><img src="https://img.shields.io/badge/R-RSS%E8%AE%A2%E9%98%85-%235A45FF?style=flat&logo=RSS" alt="img" title="RSS订阅"></a> </p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>
