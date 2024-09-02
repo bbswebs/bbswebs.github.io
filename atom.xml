@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Obash</title>
+  <title>Obash博客</title>
   <icon>https://www.obash.cc/icon.png</icon>
-  <subtitle>obash博客</subtitle>
+  
   <link href="https://www.obash.cc/atom.xml" rel="self"/>
   
   <link href="https://www.obash.cc/"/>
-  <updated>2024-09-01T14:13:11.153Z</updated>
+  <updated>2024-09-02T13:27:50.049Z</updated>
   <id>https://www.obash.cc/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网络厂商常用网站链接</title>
+    <link href="https://www.obash.cc/posts/2e826bc2.html"/>
+    <id>https://www.obash.cc/posts/2e826bc2.html</id>
+    <published>2024-09-02T06:49:48.000Z</published>
+    <updated>2024-09-02T13:27:50.049Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;思科-cisco&quot;&gt;&lt;a href=&quot;#思科-cisco&quot; class=&quot;headerlink&quot; title=&quot;思科 cisco&quot;&gt;&lt;/a&gt;思科 cisco&lt;/h2&gt;&lt;h2 id=&quot;PA-palo-alto&quot;&gt;&lt;a href=&quot;#PA-palo-alto&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="网络技术" scheme="https://www.obash.cc/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="cisco" scheme="https://www.obash.cc/tags/cisco/"/>
+    
+    <category term="h3c" scheme="https://www.obash.cc/tags/h3c/"/>
+    
+    <category term="juniper" scheme="https://www.obash.cc/tags/juniper/"/>
+    
+    <category term="huawei" scheme="https://www.obash.cc/tags/huawei/"/>
+    
+    <category term="palo alto" scheme="https://www.obash.cc/tags/palo-alto/"/>
+    
+    <category term="sangfor" scheme="https://www.obash.cc/tags/sangfor/"/>
+    
+    <category term="fortigate" scheme="https://www.obash.cc/tags/fortigate/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo+butterfly外挂标签 - 集合篇</title>
@@ -80,7 +117,7 @@
     <link href="https://www.obash.cc/posts/6b7c8f27.html"/>
     <id>https://www.obash.cc/posts/6b7c8f27.html</id>
     <published>2024-09-01T08:09:20.000Z</published>
-    <updated>2024-09-01T13:43:54.477Z</updated>
+    <updated>2024-09-02T01:05:01.295Z</updated>
     
     
       
@@ -546,35 +583,6 @@
     <category term="Linux" scheme="https://www.obash.cc/tags/Linux/"/>
     
     <category term="nmcli" scheme="https://www.obash.cc/tags/nmcli/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo+butterfly外挂标签 - 分栏tab</title>
-    <link href="https://www.obash.cc/posts/45599b87.html"/>
-    <id>https://www.obash.cc/posts/45599b87.html</id>
-    <published>2024-08-25T16:07:47.000Z</published>
-    <updated>2024-09-01T13:49:15.635Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;美化插件支持&quot;&gt;&lt;a href=&quot;#美化插件支持&quot; class=&quot;headerlink&quot; title=&quot;美化插件支持&quot;&gt;&lt;/a&gt;美化插件支持&lt;/h2&gt;&lt;div class=&quot;tabs&quot; id=&quot;标签1&quot;&gt;&lt;ul class=&quot;nav-tabs&quot;&gt;&lt;button</summary>
-        
-      
-    
-    
-    
-    <category term="博客主题" scheme="https://www.obash.cc/categories/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/"/>
-    
-    
-    <category term="butterfly" scheme="https://www.obash.cc/tags/butterfly/"/>
-    
-    <category term="hexo" scheme="https://www.obash.cc/tags/hexo/"/>
-    
-    <category term="hexo美化" scheme="https://www.obash.cc/tags/hexo%E7%BE%8E%E5%8C%96/"/>
     
   </entry>
   
