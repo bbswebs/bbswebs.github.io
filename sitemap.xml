@@ -861,14 +861,14 @@
   </url>
   
   <url>
-    <loc>https://www.obash.cc/tags/%E4%BA%A4%E6%8D%A2%E6%9C%BA/</loc>
+    <loc>https://www.obash.cc/tags/huawei/</loc>
     <lastmod>2024-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.obash.cc/tags/huawei/</loc>
+    <loc>https://www.obash.cc/tags/%E4%BA%A4%E6%8D%A2%E6%9C%BA/</loc>
     <lastmod>2024-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -896,6 +896,13 @@
   </url>
   
   <url>
+    <loc>https://www.obash.cc/tags/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8D%E9%99%90%E9%80%9F/</loc>
+    <lastmod>2024-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.obash.cc/tags/palo-alto/</loc>
     <lastmod>2024-09-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -911,13 +918,6 @@
   
   <url>
     <loc>https://www.obash.cc/tags/fortigate/</loc>
-    <lastmod>2024-09-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.obash.cc/tags/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8D%E9%99%90%E9%80%9F/</loc>
     <lastmod>2024-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
