@@ -6,7 +6,7 @@
   <link href="https://www.obash.cc/atom.xml" rel="self"/>
   
   <link href="https://www.obash.cc/"/>
-  <updated>2024-09-02T13:27:50.049Z</updated>
+  <updated>2024-09-05T09:36:12.111Z</updated>
   <id>https://www.obash.cc/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>百度网盘不限速下载器</title>
+    <link href="https://www.obash.cc/posts/2af3af17.html"/>
+    <id>https://www.obash.cc/posts/2af3af17.html</id>
+    <published>2024-09-05T08:45:12.000Z</published>
+    <updated>2024-09-05T09:36:12.111Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;此次推荐两款，貌似是一样产品，可用性自行测试，留言反馈！&lt;/p&gt;
+&lt;div class=&quot;tabs&quot; id=&quot;no1&quot;&gt;&lt;ul class=&quot;nav-tabs&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;tab  active&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="趁手工具" scheme="https://www.obash.cc/categories/%E8%B6%81%E6%89%8B%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="百度网盘不限速" scheme="https://www.obash.cc/tags/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8D%E9%99%90%E9%80%9F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>网络厂商常用网站链接</title>
     <link href="https://www.obash.cc/posts/2e826bc2.html"/>
     <id>https://www.obash.cc/posts/2e826bc2.html</id>
     <published>2024-09-02T06:49:48.000Z</published>
-    <updated>2024-09-02T13:27:50.049Z</updated>
+    <updated>2024-09-05T08:22:34.901Z</updated>
     
     
       
@@ -556,33 +582,6 @@
     <category term="防火墙" scheme="https://www.obash.cc/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
     
     <category term="ssh" scheme="https://www.obash.cc/tags/ssh/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nmcli配置bond接口</title>
-    <link href="https://www.obash.cc/posts/26219d4e.html"/>
-    <id>https://www.obash.cc/posts/26219d4e.html</id>
-    <published>2024-08-26T03:14:06.000Z</published>
-    <updated>2024-08-26T05:36:46.341Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;新建bond1虚拟接口&quot;&gt;&lt;a href=&quot;#新建bond1虚拟接口&quot; class=&quot;headerlink&quot; title=&quot;新建bond1虚拟接口&quot;&gt;&lt;/a&gt;新建bond1虚拟接口&lt;/h2&gt;&lt;figure class=&quot;highlight</summary>
-        
-      
-    
-    
-    
-    <category term="linux" scheme="https://www.obash.cc/categories/linux/"/>
-    
-    
-    <category term="Linux" scheme="https://www.obash.cc/tags/Linux/"/>
-    
-    <category term="nmcli" scheme="https://www.obash.cc/tags/nmcli/"/>
     
   </entry>
   
