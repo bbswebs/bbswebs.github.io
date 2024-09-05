@@ -6,7 +6,7 @@
   <link href="https://www.obash.cc/atom.xml" rel="self"/>
   
   <link href="https://www.obash.cc/"/>
-  <updated>2024-09-05T09:36:12.111Z</updated>
+  <updated>2024-09-05T10:20:36.978Z</updated>
   <id>https://www.obash.cc/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Cisco Packet Tracer</title>
+    <link href="https://www.obash.cc/posts/d15ed9fa.html"/>
+    <id>https://www.obash.cc/posts/d15ed9fa.html</id>
+    <published>2024-09-05T10:00:19.000Z</published>
+    <updated>2024-09-05T10:20:36.978Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Download-Cisco-Packet-Tracer-Version-8-2-2&quot;&gt;&lt;a href=&quot;#Download-Cisco-Packet-Tracer-Version-8-2-2&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="网络技术" scheme="https://www.obash.cc/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="cisco" scheme="https://www.obash.cc/tags/cisco/"/>
+    
+    <category term="Cisco Packet Tracer" scheme="https://www.obash.cc/tags/Cisco-Packet-Tracer/"/>
+    
+  </entry>
   
   <entry>
     <title>百度网盘不限速下载器</title>
@@ -551,37 +578,6 @@
     <category term="huawei" scheme="https://www.obash.cc/tags/huawei/"/>
     
     <category term="华为" scheme="https://www.obash.cc/tags/%E5%8D%8E%E4%B8%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ASA远程管理</title>
-    <link href="https://www.obash.cc/posts/838722ba.html"/>
-    <id>https://www.obash.cc/posts/838722ba.html</id>
-    <published>2024-08-26T05:37:51.000Z</published>
-    <updated>2024-08-26T05:52:47.687Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;TELNET的配置&quot;&gt;&lt;a href=&quot;#TELNET的配置&quot; class=&quot;headerlink&quot; title=&quot;TELNET的配置&quot;&gt;&lt;/a&gt;TELNET的配置&lt;/h2&gt;&lt;figure class=&quot;highlight</summary>
-        
-      
-    
-    
-    
-    <category term="网络技术" scheme="https://www.obash.cc/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"/>
-    
-    
-    <category term="cisco" scheme="https://www.obash.cc/tags/cisco/"/>
-    
-    <category term="ASA" scheme="https://www.obash.cc/tags/ASA/"/>
-    
-    <category term="防火墙" scheme="https://www.obash.cc/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
-    
-    <category term="ssh" scheme="https://www.obash.cc/tags/ssh/"/>
     
   </entry>
   
