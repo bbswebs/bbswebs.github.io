@@ -8,7 +8,7 @@
       <link href="/posts/4913852c.html"/>
       <url>/posts/4913852c.html</url>
       
-        <content type="html"><![CDATA[<h2 id="华为交换机配置远程syslog日志服务器"><a href="#华为交换机配置远程syslog日志服务器" class="headerlink" title="华为交换机配置远程syslog日志服务器"></a>华为交换机配置远程syslog日志服务器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">info-center loghost source vlan254 //发送日志源地址</span><br><span class="line">info-center loghost 10.1.1.1 //制定远程syslog日志服务器</span><br><span class="line">info-center source default channel 2 log level debugging //发送的日子等级</span><br><span class="line">info-center enable </span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h2 id="华为交换机配置远程syslog日志服务器"><a href="#华为交换机配置远程syslog日志服务器" class="headerlink" title="华为交换机配置远程syslog日志服务器"></a>华为交换机配置远程syslog日志服务器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">info-center loghost source vlan254 //发送日志源地址</span><br><span class="line">info-center loghost 10.1.1.1 //指定远程syslog日志服务器</span><br><span class="line">info-center source default channel 2 log level debugging //发送的日子等级</span><br><span class="line">info-center enable </span><br></pre></td></tr></table></figure>]]></content>
       
       
       
