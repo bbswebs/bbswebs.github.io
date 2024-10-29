@@ -6,7 +6,7 @@
   <link href="https://www.obash.cc/atom.xml" rel="self"/>
   
   <link href="https://www.obash.cc/"/>
-  <updated>2024-09-05T14:08:01.957Z</updated>
+  <updated>2024-10-29T06:33:12.885Z</updated>
   <id>https://www.obash.cc/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>华为交换机配置日志服务器</title>
+    <link href="https://www.obash.cc/posts/4913852c.html"/>
+    <id>https://www.obash.cc/posts/4913852c.html</id>
+    <published>2024-10-29T06:33:12.000Z</published>
+    <updated>2024-10-29T06:33:12.885Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Cisco Packet Tracer</title>
@@ -551,33 +564,6 @@
     <category term="nmcli" scheme="https://www.obash.cc/tags/nmcli/"/>
     
     <category term="debian" scheme="https://www.obash.cc/tags/debian/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>华为交换机多对多端口镜像</title>
-    <link href="https://www.obash.cc/posts/3c44c801.html"/>
-    <id>https://www.obash.cc/posts/3c44c801.html</id>
-    <published>2024-08-26T05:41:42.000Z</published>
-    <updated>2024-08-26T05:52:47.689Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;华为交换机多对多端口镜像&quot;&gt;&lt;a href=&quot;#华为交换机多对多端口镜像&quot; class=&quot;headerlink&quot; title=&quot;华为交换机多对多端口镜像&quot;&gt;&lt;/a&gt;华为交换机多对多端口镜像&lt;/h2&gt;&lt;figure class=&quot;highlight</summary>
-        
-      
-    
-    
-    
-    <category term="网络技术" scheme="https://www.obash.cc/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"/>
-    
-    
-    <category term="huawei" scheme="https://www.obash.cc/tags/huawei/"/>
-    
-    <category term="华为" scheme="https://www.obash.cc/tags/%E5%8D%8E%E4%B8%BA/"/>
     
   </entry>
   
