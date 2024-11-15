@@ -6,7 +6,7 @@
   <link href="https://www.obash.cc/atom.xml" rel="self"/>
   
   <link href="https://www.obash.cc/"/>
-  <updated>2024-10-29T07:19:38.022Z</updated>
+  <updated>2024-11-15T05:09:40.163Z</updated>
   <id>https://www.obash.cc/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>锐捷路由器NAT配置</title>
+    <link href="https://www.obash.cc/posts/48b9ebfa.html"/>
+    <id>https://www.obash.cc/posts/48b9ebfa.html</id>
+    <published>2024-11-15T04:54:20.000Z</published>
+    <updated>2024-11-15T05:09:40.163Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;上网（源NAT）配置&quot;&gt;&lt;a href=&quot;#上网（源NAT）配置&quot; class=&quot;headerlink&quot; title=&quot;上网（源NAT）配置&quot;&gt;&lt;/a&gt;上网（源NAT）配置&lt;/h2&gt;&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    <category term="网络技术" scheme="https://www.obash.cc/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="ssh" scheme="https://www.obash.cc/tags/ssh/"/>
+    
+    <category term="ruijie" scheme="https://www.obash.cc/tags/ruijie/"/>
+    
+    <category term="锐捷" scheme="https://www.obash.cc/tags/%E9%94%90%E6%8D%B7/"/>
+    
+    <category term="路由器" scheme="https://www.obash.cc/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>华为交换机配置日志服务器</title>
@@ -549,35 +580,6 @@
     <category term="juniper" scheme="https://www.obash.cc/tags/juniper/"/>
     
     <category term="SRX" scheme="https://www.obash.cc/tags/SRX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nmcli命令详解</title>
-    <link href="https://www.obash.cc/posts/32254948.html"/>
-    <id>https://www.obash.cc/posts/32254948.html</id>
-    <published>2024-08-26T05:44:33.000Z</published>
-    <updated>2024-08-26T05:52:47.690Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;nmcli-device介绍&quot;&gt;&lt;a href=&quot;#nmcli-device介绍&quot; class=&quot;headerlink&quot; title=&quot;nmcli device介绍&quot;&gt;&lt;/a&gt;nmcli device介绍&lt;/h2&gt;&lt;figure class=&quot;highlight</summary>
-        
-      
-    
-    
-    
-    <category term="linux" scheme="https://www.obash.cc/categories/linux/"/>
-    
-    
-    <category term="Linux" scheme="https://www.obash.cc/tags/Linux/"/>
-    
-    <category term="nmcli" scheme="https://www.obash.cc/tags/nmcli/"/>
-    
-    <category term="debian" scheme="https://www.obash.cc/tags/debian/"/>
     
   </entry>
   
