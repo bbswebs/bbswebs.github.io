@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>华为无线添加AP类型</title>
+      <link href="/posts/924d99b4.html"/>
+      <url>/posts/924d99b4.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="添加AP设备类型"><a href="#添加AP设备类型" class="headerlink" title="添加AP设备类型"></a>添加AP设备类型</h2><h2 id="背景信息"><a href="#背景信息" class="headerlink" title="背景信息"></a>背景信息</h2><p>当有新版本AP接入时，以前用户需要同步升级AC版本。而现网升级AC版本时，将会影响所有AP，如果AC同时还承担着有线侧业务，AC的升级还会影响有线侧用户。对于这种场景，仅需要在AC上配置支持新版本AP类型功能，即可以使得AC支持新款型AP类型而不用立即升级AC版本。</p><p>在AC上配置支持新版本AP类型的方式有2种：自动导入AP类型和手动配置AP类型。</p><p>一般不建议用户通过ap-type命令手工配置AP类型，如果一定需要配置，请确保type-id和type-description的对应关系配置正确，否则将导致AP接入失败。type-id和type-description的对应关系可以下载WLAN AP版本配套和形态速查表查看页签“AP类型名称与索引对应关系”。</p><p>在AC上配置新版本的AP类型时，不支持添加中心AP和配套的RU。</p><h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">执行命令system-view，进入系统视图。</span><br><span class="line">执行命令wlan，进入WLAN视图。</span><br><span class="line">执行命令display ap-type undefined record，查看由于AC不支持导致AP接入失败的AP类型列表。</span><br><span class="line">执行命令auto create ap-type &#123; type-id type-id | type type-description | all &#125;，自动导入AP类型。</span><br><span class="line">命令执行完后，会有导入结果的打印信息。</span><br><span class="line"></span><br><span class="line">如果自动导入AP类型失败，可以执行命令ap-type type-description type-id type-id，手动配置AP类型。</span><br></pre></td></tr></table></figure><h2 id="检查配置结果"><a href="#检查配置结果" class="headerlink" title="检查配置结果"></a>检查配置结果</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">执行命令display ap-type &#123; all | id type-id | type ap-type &#125;，查看AP设备类型信息。</span><br><span class="line">执行命令display ap-type attributes abnormal-check-record，查看AP类型添加时的AP属性校验异常记录。</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 无线 </tag>
+            
+            <tag> huawei </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>飞塔防火墙debug排错</title>
       <link href="/posts/52cb3abe.html"/>
       <url>/posts/52cb3abe.html</url>
