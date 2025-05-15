@@ -4,6 +4,62 @@
   
     
     <entry>
+      <title>华为防火墙基于tunnle的ipsec</title>
+      <link href="/posts/6c66535e.html"/>
+      <url>/posts/6c66535e.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="华为防火墙基于tunnle的ipsec"><a href="#华为防火墙基于tunnle的ipsec" class="headerlink" title="华为防火墙基于tunnle的ipsec"></a>华为防火墙基于tunnle的ipsec</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">ipsec proposal tran1</span><br><span class="line"> esp authentication-algorithm sha2-256</span><br><span class="line"> esp encryption-algorithm aes-256</span><br><span class="line"></span><br><span class="line">ike proposal 5</span><br><span class="line"> encryption-algorithm aes-256</span><br><span class="line"> dh group14</span><br><span class="line"> authentication-algorithm sha2-256</span><br><span class="line"> authentication-method pre-share</span><br><span class="line"> integrity-algorithm hmac-sha2-256</span><br><span class="line"> prf hmac-sha2-256</span><br><span class="line">#                                         </span><br><span class="line">ike peer b //ipsec对端名称</span><br><span class="line"> undo version 2</span><br><span class="line"> pre-shared-key cisco123</span><br><span class="line"> ike-proposal 5 //调用ike配置</span><br><span class="line">#</span><br><span class="line">ipsec profile profile2 //将peer和proposal绑定</span><br><span class="line"> ike-peer b</span><br><span class="line"> proposal tran1</span><br><span class="line"></span><br><span class="line">interface Tunnel10</span><br><span class="line"> ip address 169.254.10.1 255.255.255.0 //隧道接口地址</span><br><span class="line"> tunnel-protocol ipsec //隧道类型</span><br><span class="line"> source 223.1.1.2 //建立ipsec的本端公网iP</span><br><span class="line"> destination 222.1.1.2 //建立ipsec的对端公网IP</span><br><span class="line"> alias Tunnel10</span><br><span class="line"> service-manage ping permit</span><br><span class="line"> ipsec profile profile2 //绑定ipsec profile</span><br><span class="line"></span><br><span class="line">## tunnel接口要配置安全域 </span><br><span class="line">firewall zone trust</span><br><span class="line"> set priority 85</span><br><span class="line"> add interface GigabitEthernet0/0/0</span><br><span class="line"> add interface Tunnel10</span><br><span class="line"></span><br><span class="line">安全策略根据实际情况放行</span><br><span class="line"></span><br><span class="line">ip route-static 0.0.0.0 0.0.0.0 223.1.1.1</span><br><span class="line">ip route-static 169.254.10.2 255.255.255.255 Tunnel10 //配置静态路由下一跳为tunnle</span><br><span class="line">ip route-static 192.168.99.0 255.255.255.0 Tunnel10</span><br><span class="line"></span><br></pre></td></tr></table></figure><h3 id="一个bgp配置示例"><a href="#一个bgp配置示例" class="headerlink" title="一个bgp配置示例"></a>一个bgp配置示例</h3><p><img src="https://i.imgur.com/IJhTNOf.png" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 交换机 </tag>
+            
+            <tag> huawei </tag>
+            
+            <tag> 华为 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Aruba无线配置</title>
+      <link href="/posts/6a923773.html"/>
+      <url>/posts/6a923773.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="修改ap组"><a href="#修改ap组" class="headerlink" title="修改ap组"></a>修改ap组</h2><h3 id="新建AP组，名称为Group-6F"><a href="#新建AP组，名称为Group-6F" class="headerlink" title="新建AP组，名称为Group-6F"></a>新建AP组，名称为Group-6F</h3><p><img src="https://i.imgur.com/cLFL3qZ.png" alt=""></p><h3 id="将已上线的AP重分配到新建组"><a href="#将已上线的AP重分配到新建组" class="headerlink" title="将已上线的AP重分配到新建组"></a>将已上线的AP重分配到新建组</h3><p><img src="https://i.imgur.com/KWNTgEZ.png" alt=""><br><img src="https://i.imgur.com/7nPSnlC.png" alt=""><br>修改AP组会重启ap，请注意<br><img src="https://i.imgur.com/CaT1Z7b.png" alt=""></p><h1 id="Running-ADP"><a href="#Running-ADP" class="headerlink" title="Running ADP"></a>Running ADP</h1><p>aruba ap535 卡在running adp处，直接重置</p><h3 id="ap重置（ap535）"><a href="#ap重置（ap535）" class="headerlink" title="ap重置（ap535）"></a>ap重置（ap535）</h3><ol><li>拔掉POE供电</li><li>按住ap后端reset按钮，接通电源，持续按住约5秒钟</li><li>等待ap重置</li><li>重置后默认 user：admin password：ap的sn号码</li></ol><h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><p>查看ap工作模式：</p><h1 id="show-ap-env"><a href="#show-ap-env" class="headerlink" title="show ap-env"></a>show ap-env</h1><p>Antenna Type:Internal //工作模式为胖AP，aruba称为IAP</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> aruba </tag>
+            
+            <tag> wifi </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>华为无线添加AP类型</title>
       <link href="/posts/924d99b4.html"/>
       <url>/posts/924d99b4.html</url>
