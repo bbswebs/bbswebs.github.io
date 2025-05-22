@@ -6,7 +6,7 @@
   <link href="https://www.obash.cc/atom.xml" rel="self"/>
   
   <link href="https://www.obash.cc/"/>
-  <updated>2025-05-15T08:40:51.469Z</updated>
+  <updated>2025-05-22T01:50:31.157Z</updated>
   <id>https://www.obash.cc/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>超大sql文件分割</title>
+    <link href="https://www.obash.cc/posts/de4ba099.html"/>
+    <id>https://www.obash.cc/posts/de4ba099.html</id>
+    <published>2025-05-22T01:30:03.000Z</published>
+    <updated>2025-05-22T01:50:31.157Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;一个15G左右的sql文件，无法直接倒入到数据库中&lt;/p&gt;
+&lt;h2 id=&quot;sql分割&quot;&gt;&lt;a href=&quot;#sql分割&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数据库" scheme="https://www.obash.cc/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+    <category term="sql" scheme="https://www.obash.cc/tags/sql/"/>
+    
+    <category term="sql server" scheme="https://www.obash.cc/tags/sql-server/"/>
+    
+  </entry>
   
   <entry>
     <title>华为防火墙基于tunnle的ipsec</title>
@@ -546,32 +574,6 @@
     <category term="华三" scheme="https://www.obash.cc/tags/%E5%8D%8E%E4%B8%89/"/>
     
     <category term="交换机" scheme="https://www.obash.cc/tags/%E4%BA%A4%E6%8D%A2%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>cisco自动备份</title>
-    <link href="https://www.obash.cc/posts/4399954.html"/>
-    <id>https://www.obash.cc/posts/4399954.html</id>
-    <published>2024-08-26T06:25:34.000Z</published>
-    <updated>2024-08-26T06:46:21.619Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;如果您想要在Cisco设备上执行计划命令,如果您使用 的 IOS 是12.3(1)以后的新版本那么”kron”无疑是您理想的选择。&lt;/p&gt;
-&lt;p&gt;举个简单的例子，如果想要在每个星期日天晚上11点钟保存一份running config</summary>
-        
-      
-    
-    
-    
-    <category term="网络技术" scheme="https://www.obash.cc/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/"/>
-    
-    
-    <category term="cisco" scheme="https://www.obash.cc/tags/cisco/"/>
     
   </entry>
   
